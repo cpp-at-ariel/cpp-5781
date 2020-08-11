@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+CXX=g++
+CXXFLAGS=-std=c++98
+
+all: 
+	$(CXX) $(CXXFLAGS) *.cpp -o main.exe
+	./main.exe
