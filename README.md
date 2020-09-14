@@ -1,7 +1,18 @@
-# cpp-5781
-Ariel university C++ course, year 5781.
+# תכנות מערכות ב
+## אוניברסיטת אריאל, המחלקה למדעי המחשב, סמסטר א ה'תשפ"א
 
-Credits:
-* Some slides are based on slides by Dr. Ofir Pele,  Dr. Miri Ben-Nissan and Dr. Eran Kaufmann.
-* Other slides and texts by Erel Segal-Halevi.
-* The author/s of code samples are mentioned inside the files.
+מטרת הקורס היא לאמן אתכם בתיכנות בשפה קשה ומסובכת במיוחד - שפת
+ ++C.
+  שפה הכוללת פרדיגמות שונות - תיכנות פרוצדורלי, מונחה-עצמים ופונקציונלי. 
+  שפה הדורשת ניהול ידני של משאבי הזיכרון.
+בנוסף, הקורס מאמן אתכם בכישורים כלליים החיוניים לכל מתכנת, כגון: עבודה בסביבות לינוקס
+ (Linux), כולל סקריפטים (bash), גיט (git), הצגת קוד בפני הכיתה, עמידה בלוחות זמנים, והתמודדות עם תקלות ושינויים לא צפויים.
+
+לפרטים ראו:
+ * [סילבוס](syllabus.pdf)
+ * [בחינות משנים קודמות](https://github.com/erelsgl-at-ariel/cpp-course/)
+
+
+## תודות
+
+* חלק מהמצגות מבוססות על מצגות של אופיר פלא, מירי בן-ניסן, וערן קאופמן.
