@@ -36,8 +36,8 @@ distances = [
 	[1,2,3,4,5,6,7,8,0,10,11],	
 	[1,2,3,4,5,6,7,8,2,8,11],	
 ]
-start = time.clock()
+start = time.process_time()
 print(find_shortest_path(distances), flush=True)
-end = time.clock()
+end = time.process_time()
 duration_in_seconds = end-start
 print("Shortest path calculated in {} seconds".format(duration_in_seconds), flush=True)

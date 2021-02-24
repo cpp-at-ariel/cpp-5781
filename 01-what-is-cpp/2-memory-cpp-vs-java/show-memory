@@ -2,6 +2,6 @@
 
 while :
 do
-	cat /proc/meminfo | grep MemAvailable
+	cat /proc/meminfo | grep MemFree
 	sleep 1   # wait for one second, and repeat
 done

@@ -9,6 +9,8 @@
 *.lo
 *.o
 *.obj
+*.pyc
+*.class
 
 # Precompiled Headers
 *.gch

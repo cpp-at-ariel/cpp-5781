@@ -8,7 +8,7 @@
 #include <chrono>
 using namespace std;
 
-constexpr int SIZE=125*1000*1024; // ~ 125,000,000
+const int SIZE=500*1000*1024;
 
 class Point {
 	private:
