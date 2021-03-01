@@ -35,14 +35,14 @@ def find_shortest_hamiltonian_cycle (distances: List[List[float]])->str:
 
 if __name__=="__main__":
 		
-	distances = [
+	distances = [  # 3 towns -- 6 permutations
 		[0,2,3],
 		[4,0,6],
 		[7,8,0]
 	]
 	print(find_shortest_hamiltonian_cycle(distances), flush=True)
 
-	distances = [
+	distances = [ # 11 towns -- 11! permutations
 		[1,0,3,4,5,6,7,8,9,10,11],
 		[1,2,3,4,5,6,7,0,9,10,11],
 		[1,2,3,0,5,6,7,8,9,10,11],

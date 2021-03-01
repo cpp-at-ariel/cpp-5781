@@ -11,7 +11,7 @@ class Point {
 
 
 public class Memory {
-	static final int SIZE=500*1000*1024;
+	static final int SIZE=125*1000*1024;
 
 	public static void main(String[] args) throws InterruptedException {
 		System.out.println("Before new");
