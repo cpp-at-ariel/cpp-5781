@@ -14,7 +14,7 @@
 #include <cmath>
 #include <cassert>
 #include <string>
-using std::cout, std::endl, std::string;
+using namespace std;
 
 double sqrtWithBug(double x) {
 	double result = -std::sqrt(x);

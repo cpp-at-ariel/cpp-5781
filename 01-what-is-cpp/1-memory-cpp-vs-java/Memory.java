@@ -11,8 +11,9 @@ class Point {
 
 
 public class Memory {
-	static final int SIZE=125*1000*1024;
-
+	static final int KB=1024;
+	static final int SIZE=50*1000*KB;
+ 
 	public static void main(String[] args) throws InterruptedException {
 		System.out.println("Before new");
 		Thread.sleep(3000);

@@ -17,7 +17,8 @@ class Point {
 };
 
 int main() {
-	const int SIZE=125*1000*1024;
+	const int KB = 1024;
+	const int SIZE=50*1000*KB;
 
 	cout << "Before new" << ' ' << endl;
 	this_thread::sleep_for(chrono::seconds(3));

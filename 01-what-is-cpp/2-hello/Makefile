@@ -5,3 +5,6 @@ CXXFLAGS=-std=c++2a
 all: 
 	$(CXX) $(CXXFLAGS) *.cpp -o main.exe
 	./main.exe
+
+tidy:
+	clang-tidy *.cpp -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,hicpp-*,performance-*,portability-*,readability-* --warnings-as-errors=* --
