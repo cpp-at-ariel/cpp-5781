@@ -26,6 +26,6 @@ public class Memory {
 
 		// The free memory should drop by ... KB
 
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 	}
 }

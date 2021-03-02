@@ -5,7 +5,7 @@ import time
 import math
 from typing import *
 
-def find_shortest_hamiltonian_cycle (distances: List[List[float]])->str:
+def find_shortest_hamiltonian_cycle (distances)->str:
 	num_of_towns = len(distances)
 	shortest_distance_so_far = math.inf
 	shortest_path_so_far = None

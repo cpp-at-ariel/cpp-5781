@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 
-namespace abc {
-	void printx() {
+#include "namespace.hpp"
+
+// namespace abc {
+	void abc::printx() {
 		cout << 6 << endl;
 	}
-}
+// }

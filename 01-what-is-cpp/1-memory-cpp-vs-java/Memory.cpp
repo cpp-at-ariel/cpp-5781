@@ -30,7 +30,7 @@ int main() {
 	cout << "After new" << endl;
 	// The free memory should drop by ... KB.
 
-	this_thread::sleep_for(chrono::seconds(5));
+	this_thread::sleep_for(chrono::seconds(10));
 
 	delete[] p;
 }

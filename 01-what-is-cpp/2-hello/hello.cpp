@@ -10,9 +10,14 @@ int main() {
     string name;
     cout << "What is your name? ";
     cin >> name;
-    cout << endl << "Hello " << name << "!" << endl;
+    cout << "What is your age? ";
+    int age;
+    cin >> age;
+    cout << endl << "Hello " << name << age << " !" << endl;
     cout << (1 << 5) << endl;
-    auto i = "abc";
+    const auto i = "abc";
+    //i = "def";
+    //i = 5;  // error
     return 0;
 }
 

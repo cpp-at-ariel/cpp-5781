@@ -3,11 +3,12 @@
 
 
 int factorial(int number) { 
-    return 1;
-    // if (number<0)
-    //     throw std::invalid_argument("Argument to factorial must be non-negative");
-
-    // return number <= 1?
-    //     number:
-    //     factorial(number - 1) * number; 
+    if (number<0) {
+        throw std::out_of_range{"negative input"};
+    }
+    int result = 1;
+    for (int i=1; i<=number; ++i) {
+        result = result*i;
+    }
+    return result;
 }

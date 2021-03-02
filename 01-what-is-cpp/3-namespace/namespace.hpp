@@ -1,7 +1,5 @@
-#include <iostream>
-using namespace std;
 
-namespace abc{
+namespace abc { 
 	void printx();
 };
 
