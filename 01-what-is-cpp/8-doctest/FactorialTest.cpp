@@ -11,12 +11,12 @@ TEST_CASE("Factorials of small numbers") {
 
 
 TEST_CASE("Factorials of large numbers") {
+    CHECK(factorial(4) == 24);
+    CHECK(factorial(6) == 720);
     CHECK(factorial(10) == 3628800);
 
-    auto f3 = factorial(3);
-    CHECK((f3==5 || f3==6)); // logic OR requires parentheses!
-
-    /* add more checks here */
+    // auto f3 = factorial(3);
+    // CHECK((f3==5 || f3==6)); // logic OR requires parentheses!
 }
 
 

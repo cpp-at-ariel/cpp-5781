@@ -1,11 +1,8 @@
 #include <iostream>
-using namespace std;
-
 #include "namespace.hpp"
-using namespace abc;
 
 void printx() {
-	cout << 5 << endl;
+	std::cout << 5 << std::endl;
 }
 
 int main() {
