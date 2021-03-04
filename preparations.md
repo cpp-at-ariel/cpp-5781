@@ -38,8 +38,24 @@
 מומלץ להתאים את סביבת-העבודה שלכם כך שתאפשר לכם לבצע הרצות אלו בלחיצת כפתור. איך לעשות זאת - זה משתנה מסביבה לסביבה. 
 בהרצאות נשתמש בסביבת
 Visual Studio Code
-עם התוספים "C/C++ Intellisense", "Code Runner",
-אבל אתם יכולים לעבוד עם כל סביבה שמתאימה לכם.
+עם התוספים "C/C++ Intellisense", "Code Runner".
+בהגדרות של התוסף Code Runner,
+הולכים לחלק שנקרא Executor Map,
+ומוסיפים את הקטע הבא (בלינוקס):
 
-להתראות
+<pre dir="ltr">
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && make MAIN=$fullFileName"
+    },
+</pre>
+
+בחלונות מוסיפים את הקטע הבא - אחרי שהתקנתם את 
+wsl:
+
+<pre dir="ltr">
+    "code-runner.executorMap": {
+        "cpp": "cd $dir; wsl make MAIN=$(wsl wslpath '$fullFileName')" 
+    },
+</pre>
+
 </div>
