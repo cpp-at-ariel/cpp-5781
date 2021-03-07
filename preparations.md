@@ -40,7 +40,10 @@
 Visual Studio Code
 עם התוספים "C/C++ Intellisense", "Code Runner".
 בהגדרות של התוסף Code Runner,
-הולכים לחלק שנקרא Executor Map,
+קודם-כל מסמנים את ההגדרה
+"File Directory As Cwd".
+
+אחר-כך הולכים לחלק שנקרא Executor Map,
 ומוסיפים את הקטע הבא (בלינוקס):
 
 <pre dir="ltr">
@@ -49,7 +52,7 @@ Visual Studio Code
     },
 </pre>
 
-בחלונות מוסיפים את הקטע הבא - אחרי שהתקנתם את 
+בחלונות, אם השורה הנ"ל לא עובדת, אז צריך להוסיף את הקטע הבא - אחרי שהתקנתם את 
 wsl:
 
 <pre dir="ltr">
@@ -57,5 +60,4 @@ wsl:
         "cpp": "cd $dir; wsl make MAIN=$(wsl wslpath '$fullFileName')" 
     },
 </pre>
-
 </div>
