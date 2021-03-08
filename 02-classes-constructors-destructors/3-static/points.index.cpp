@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 
 class Point {
@@ -28,13 +29,14 @@ class Point {
 
     void setX(int newX) { 
         if (newX>MAXX)
-            throw "New x is too large! The maximum is "+std::to_string(MAXX);
+            throw out_of_range("New x is too large! The maximum is "+std::to_string(MAXX));
+        //x is equivalent to this->x;
         x = newX; 
     }
 
     void setY(int newY) { 
         if (newY>MAXY)
-            throw "New y is too large! The maximum is "+std::to_string(MAXY);
+            throw out_of_range("New y is too large! The maximum is "+std::to_string(MAXY));
         y = newY; 
     }
 
@@ -43,7 +45,7 @@ class Point {
     }
 
     static void showMax() {
-        //x is equivalent to this->x;
+        //cout << this << endl; // compilation error: no this
         cout << MAXX << "," << MAXY << endl;
     }
 };
@@ -65,7 +67,7 @@ int main() {
     cout << Point::MAXX << "," << Point::MAXY << endl;
     Point::showMax();
 
-    //p3.setX(2000);  // exception
+    // p1.setX(2000);  // exception
 
     return 0;
 }

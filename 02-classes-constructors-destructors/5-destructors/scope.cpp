@@ -1,5 +1,6 @@
 /**
- * A simple example of variable scopes.
+ * A memory-refresher for variable scopes.
+ * Read if you forgot / did not learn about variable scopes in C.
  * 
  * @author Erel Segal-Halevi
  * @since  2019-02
@@ -20,5 +21,5 @@ int main() {
 		int k = i+4444;
 	}
 	cout << "j = " << j << endl;
-	// cout << k << endl;  // k is not defined
+	//cout << k << endl;  // Error: k is not defined
 }

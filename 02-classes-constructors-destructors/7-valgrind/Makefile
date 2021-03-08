@@ -7,10 +7,10 @@ CXXFLAGS=-std=c++2a
 
 RM=rm -f
 
-VALGRIND_FLAGS=
+# VALGRIND_FLAGS=
 VALGRIND_FLAGS=-v --leak-check=full --show-leak-kinds=all
 
-VALGRIND_FILTER=
+# VALGRIND_FILTER=
 VALGRIND_FILTER=2>&1 | grep "lost"
 
 ifndef MAIN

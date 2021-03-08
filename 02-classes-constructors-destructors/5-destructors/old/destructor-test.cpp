@@ -1,5 +1,5 @@
 /**
- * Demonstrates what happens when an object is destructed twice.
+ * Demonstrates the time in which a destructor is called.
  * 
  * @author Erel Segal-Halevi
  * @since  2018-03
@@ -14,7 +14,7 @@ public:
     ~Test() {cout<<"d "<<x << endl;}
 };
 
-/* Option
+/* We can also define the destructor offline:
 Test::~Test() {
     cout<<"d "<<x << endl;
 }
@@ -27,30 +27,21 @@ Test f () {
 void g (Test t) {
 }
 
-Test& h() {
-    Test t(88);
-    return t;
-}
-
-
 int main() {
-    cout << "1" << endl;
+    cout << "-- 1 --" << endl;
     Test* plist = new Test(10);
     {
         Test list0(5);
         cout << "in scope" << endl;
-        //Test* p = &list0;
-        //delete p;
     }
-    cout << "2" << endl;
+    cout << "-- 2 --" << endl;
     delete plist;
 
-    cout << "3" << endl;
+    cout << "-- 3 --" << endl;
     Test t1(555);
     Test t2 = f();
-    cout << "4" << endl;
+    cout << "-- 4 --" << endl;
     g(Test(67));
-    cout << "5" << endl;
-    cout << h().x << endl;
+    cout << "-- 5 --" << endl;
     Test array[5] {11, 22, 33, 44, 55};
 }

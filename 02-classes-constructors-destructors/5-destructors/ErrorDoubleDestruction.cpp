@@ -10,13 +10,17 @@
 using namespace std;
 
 int main() {
+    cout << "{" << endl;
     {
         IntList list0(1000);
         list0.fill(99);
+        list0.print();
         cout << "l0.get(5) = " << list0.get(5) << endl;
         // list0.~IntList();
     }
+    cout << "}" << endl;
 
+    cout << "{" << endl;
     {
         IntList l1(2000);
         l1.print();
@@ -30,5 +34,6 @@ int main() {
         cout << "l1.get(5) = " << l1.get(5) << endl;
         l1.print();
     }
+    cout << "}" << endl;
     return 0;
 }

@@ -18,9 +18,6 @@ public:
     Complex sum(Complex b);        // "outline" method
 };
 
-// string Complex::to_string() {
-//     return string("hahaha");
-// }
 
 // "outline" constructor implementation:
 Complex::Complex(double re1, double im1) { 

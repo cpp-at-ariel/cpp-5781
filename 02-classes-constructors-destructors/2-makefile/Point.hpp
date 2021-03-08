@@ -22,7 +22,7 @@ class Point {
     // // Constructors:
     Point() {
       cout << "Point[]" << endl; 
-      x = 88; y = 12; 
+      x = 88; y = 12;  
     }
     Point(int z) { 
       cout << "Point(int)" << endl; 

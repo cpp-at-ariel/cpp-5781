@@ -1,8 +1,6 @@
 #pragma once
 
 #include <iostream>
-using namespace std;
-
 
 class Point {
   private:    // Not required. All is private by default.
@@ -18,15 +16,15 @@ class Point {
     void setX(int);
     void setY(int);
 
-    string to_string();
+    std::string to_string();
 
     // // Constructors:
     Point() {
-      cout << "Point()" << endl; 
+      std::cout << "Point()" << std::endl; 
       x = 88; y = 12; 
     }
     Point(int z) { 
-      cout << "Point[int]" << endl; 
+      std::cout << "Point(int)" << std::endl; 
       x = y = z; 
     }
     Point(int, int);

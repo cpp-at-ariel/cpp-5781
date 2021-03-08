@@ -1,7 +1,7 @@
 #include "Point.hpp"
 
 
-// The following line demonstrates the importance of "pragma once":
+// The following line demonstrates the importance of the "pragma once" in Point.hpp:
 #include "Rectangle.hpp"  
 
 #include <iostream>
@@ -24,8 +24,6 @@ int main() {
 
     Rectangle r;
     cout << "r = " << r.to_string() << endl;
-
-    // cout << "Point{7} = " << Point{7}.to_string() << endl;
 
     // //Point p3();
     // //cout << p3.to_string() << endl;

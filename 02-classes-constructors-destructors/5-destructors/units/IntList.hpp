@@ -8,12 +8,13 @@ class IntList {
         int* theInts;
         char* listName;
         unsigned int numInts;
+        const int NAME_LENGTH=5;
 
     public:
         IntList(uint numInts) {
             cout << "construct(" << numInts << ")" << endl;
             theInts = new int[numInts];
-            listName = new char[5];
+            listName = new char[NAME_LENGTH];
             this->numInts = numInts;
         }
 
@@ -23,7 +24,7 @@ class IntList {
             delete[] listName;
         }
         
-        void print() {cout << "pointer=" << theInts << endl; }
+        void print() {cout << "  theInts=" << theInts << endl; }
 
         void fill(int value);
         int get(uint index);
