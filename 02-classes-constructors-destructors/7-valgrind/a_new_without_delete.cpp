@@ -10,6 +10,6 @@ public:
 int main() {
 	Point array_stack [1000];
 	Point* array_heap = new Point[1000];
-	delete[] array_heap;
+	// delete[] array_heap;
 	return 0;
 }

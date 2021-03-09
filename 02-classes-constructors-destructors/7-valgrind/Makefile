@@ -8,13 +8,10 @@ CXXFLAGS=-std=c++2a
 RM=rm -f
 
 # VALGRIND_FLAGS=
-VALGRIND_FLAGS=-v --leak-check=full --show-leak-kinds=all
-
-# VALGRIND_FILTER=
-VALGRIND_FILTER=2>&1 | grep "lost"
+VALGRIND_FLAGS=-v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 
 ifndef MAIN
-  MAIN=./main.cpp
+  MAIN=./a_new_without_delete.cpp
 endif
 
 MAINEXECUTABLE=$(subst .cpp,,$(MAIN)).exe
@@ -22,7 +19,7 @@ MAINEXECUTABLE=$(subst .cpp,,$(MAIN)).exe
 SOURCES=$(MAIN)
 
 all: $(MAINEXECUTABLE)
-	valgrind --tool=memcheck $(VALGRIND_FLAGS) $(MAINEXECUTABLE) $(VALGRIND_FILTER)
+	valgrind --tool=memcheck $(VALGRIND_FLAGS) $(MAINEXECUTABLE) 2>&1 | { grep "lost" || true; }
 
 $(MAINEXECUTABLE): $(SOURCES)
 	$(CXX) $(CXXFLAGS) $(SOURCES) -o $(MAINEXECUTABLE)
