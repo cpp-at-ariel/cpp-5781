@@ -8,6 +8,7 @@ using namespace std;
 
 int main() {
     cout << endl << "array1" << endl;
+    
     Point array1[5];
     //sizeof(array1)/sizeof(array1[0]);
     cout << "array1[3] = " << array1[3].to_string() << endl;
@@ -32,12 +33,12 @@ int main() {
     Point* pArray = new Point[size] { {}, 1, {2,3} };
 
     cout << endl << "cppArray" << endl;
-    array<Point,3> cppArray{1, {2,3} };
+    array<Point,3> cppArray {1, {2,3} };
     cout << "cppArray[0] = " << cppArray[0].to_string() << endl;
     cout << "cppArray[1] = " << cppArray[1].to_string() << endl;
 
     cout << endl << "cppVector" << endl;
-    vector<Point> cppVector{1, {2,3} };
+    vector<Point> cppVector {1, {2,3} };
     cout << "cppVector[0] = " << cppVector[0].to_string() << endl;
     cout << "cppVector[1] = " << cppVector[1].to_string() << endl;
     return 0;

@@ -3,4 +3,5 @@
 
 class Circle {
 	Point center;
+	float radius;
 };

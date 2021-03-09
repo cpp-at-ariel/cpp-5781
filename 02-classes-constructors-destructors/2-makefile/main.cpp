@@ -3,6 +3,8 @@
 
 // The following line demonstrates the importance of the "pragma once" in Point.hpp:
 #include "Rectangle.hpp"  
+#include "Circle.hpp"  
+#include "Triangle.hpp"  
 
 #include <iostream>
 using namespace std;

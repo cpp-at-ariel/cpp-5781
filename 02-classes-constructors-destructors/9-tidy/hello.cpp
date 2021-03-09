@@ -6,7 +6,10 @@
 
 #include <iostream>
 #include <string>
+#include <array>
 using namespace std;
+
+const int NUM_OF_SUBMISSIONS_IN_SEMESTER = 12;
 
 int main() {
     cout << "Each student should submit " << 12 << " exercises." << endl;
@@ -18,6 +21,7 @@ int main() {
         cout << "Try again." << endl;
 
     string submission_names[3] = {"a", "b", "c"};
+    // array<string,3> submission_names = {"a", "b", "c"};  // Array with a fixed size, like in C
     cout << submission_names[0] << endl;
     return 0;
 }

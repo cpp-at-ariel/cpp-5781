@@ -1,7 +1,7 @@
 #include "Point.hpp"
 
 int f(int x) {
-	return x+2;
+	return x+3;
 }
 
 

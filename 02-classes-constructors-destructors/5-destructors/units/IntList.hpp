@@ -9,6 +9,7 @@ class IntList {
         char* listName;
         unsigned int numInts;
         const int NAME_LENGTH=5;
+        int dummy[5];
 
     public:
         IntList(uint numInts) {
@@ -22,6 +23,7 @@ class IntList {
             cout << "destruct(" << numInts << ")" << endl;
             delete[] theInts;
             delete[] listName;
+            // NOTE: no need to delete dummy - it is on the stack
         }
         
         void print() {cout << "  theInts=" << theInts << endl; }

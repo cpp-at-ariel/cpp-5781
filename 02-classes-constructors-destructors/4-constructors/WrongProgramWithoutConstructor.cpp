@@ -4,10 +4,10 @@
  */
 
 
-class A {
+struct A {
 	public:
 	A(int) {}
-	//A() = default;
+	A() = default;
 	//A(const A&) = default;
 	//A& operator=(const A&) = default;
 	//A(int,int) = default;
