@@ -18,7 +18,7 @@ MAINEXECUTABLE=$(subst .cpp,,$(MAIN)).exe
 
 SOURCES=$(MAIN)
 
-all: $(MAINEXECUTABLE)
+valgrind: $(MAINEXECUTABLE)
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) $(MAINEXECUTABLE) 2>&1 | { egrep "lost| at " || true; }
 
 $(MAINEXECUTABLE): $(SOURCES)

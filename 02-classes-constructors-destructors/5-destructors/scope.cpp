@@ -1,5 +1,5 @@
 /**
- * A memory-refresher for variable scopes.
+ * A reminder for variable scopes.
  * Read if you forgot / did not learn about variable scopes in C.
  * 
  * @author Erel Segal-Halevi

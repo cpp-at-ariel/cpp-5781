@@ -10,7 +10,7 @@ class Line
 		Point p1, p2;
 	public:
 		Line()
-		: p1{0,0}, p2{0,0}
+		// : p1{0,0}, p2{0,0}
 		//: p1{}, p2{}  // automatic
 		{ 
 			// p1.setX(0);

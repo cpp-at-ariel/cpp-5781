@@ -8,8 +8,8 @@ class IntList {
         int* theInts;
         char* listName;
         unsigned int numInts;
-        const int NAME_LENGTH=5;
-        int dummy[5];
+        static const int NAME_LENGTH=5;
+        int dummy[NAME_LENGTH];
 
     public:
         IntList(uint numInts) {

@@ -16,7 +16,7 @@ class IntList {
         }
 
         ~IntList() {
-            cout << "destruct" << endl;
+            cout << "destruct(" << numInts << ")" << endl;
             delete[] theInts;
         }
 

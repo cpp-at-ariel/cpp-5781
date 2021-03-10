@@ -24,7 +24,7 @@ int main() {
     }
     cout << "}" << endl;
     delete[] listpointer;   // five destructions
-    //delete   listpointer;   // one destructor + segmentation fault / memory leak
+    // delete   listpointer;   // one destructor + segmentation fault / memory leak
 
     return 0;
 }

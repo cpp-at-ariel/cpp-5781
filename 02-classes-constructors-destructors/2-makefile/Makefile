@@ -21,7 +21,7 @@ Circle.o: Circle.cpp Circle.hpp Point.hpp
 Triangle.o: Triangle.cpp Triangle.hpp Point.hpp
 	$(CXX) $(CXXFLAGS) --compile Triangle.cpp -o Triangle.o
 
-main.o: main.cpp Point.hpp Rectangle.hpp
+main.o: main.cpp Point.hpp Rectangle.hpp Circle.hpp Triangle.hpp
 	$(CXX) $(CXXFLAGS) --compile main.cpp -o main.o
 
 clean:
