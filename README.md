@@ -14,6 +14,7 @@
  * [סילבוס](syllabus.pdf)
  * [איך להתכונן לקורס](preparations.md)
  * [המטלות וכללי חישוב הציון בקורס](grade-rules.md)
+ * [נוהל הגשת מטלות באיחור](late-submissions.md)
  * [בחינות משנים קודמות](https://github.com/erelsgl-at-ariel/cpp-course)
 
 הגשת המטלות היא אישית. מותר להתייעץ ולקבל עזרה, אבל יש לדווח בכתב על כל עזרה שקיבלתם, בהתאם ל[תקנון היושר של המחלקה](https://www.ariel.ac.il/wp/cs/wp-content/uploads/sites/88/2020/08/Guidelines-for-Academic-Integrity.pdf).
