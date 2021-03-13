@@ -10,3 +10,6 @@ endif
 all: 
 	$(CXX) $(CXXFLAGS) $(MAIN)
 	./a.out
+
+tidy:
+	clang-tidy *.cpp -checks=*,-modernize-*,-*-magic-* --
