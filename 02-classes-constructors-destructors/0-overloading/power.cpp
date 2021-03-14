@@ -12,18 +12,7 @@ int power(int a, unsigned int b) {
     cout << "   power of uints" << endl;
     //cout << b;
     return b==0? 1: a*power(a,b-1);
-    //return 0;
 }
-
-// double power(int a, int b) {
-//     cout << "   power of ints" << endl;
-//     return exp(b*log(a));
-// }
-
-// double power(int a, double b) {
-//      cout << "   power of reals" << endl;
-//      return exp(b*log(a));
-// }
 
 double power(double a, double b) {
      cout << "   power of reals" << endl;
@@ -49,5 +38,5 @@ int main() {
     //cout << power(2, 3.5) << endl;  // ???
     // cout << power(2.0,3.5) << endl;
     // cout << power(2, (int)3.5) << endl;  // ???
-    cout << power(2, -3) << endl;   // ???
+    // cout << power(2, -3) << endl;   // ???
 }
