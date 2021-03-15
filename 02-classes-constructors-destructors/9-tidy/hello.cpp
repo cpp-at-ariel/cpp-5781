@@ -15,7 +15,7 @@ int main() {
     cout << "Each student should submit " << 12 << " exercises." << endl;
 
     int submission_count = 11;
-    if (submission_count >= 12)
+    if (submission_count >= 12) 
         cout << "OK!"  << endl;
     else 
         cout << "Try again." << endl;

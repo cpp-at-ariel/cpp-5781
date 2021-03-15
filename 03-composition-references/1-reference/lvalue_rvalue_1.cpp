@@ -1,5 +1,6 @@
 /**
- * Demonstrates assigning values to references in C++.
+ * Demonstrates the difference between l-value and r-value in C++.
+ * 
  * @author Erel Segal-Halevi
  * @since 2018-02
  */
@@ -18,15 +19,14 @@ int main() {
     //x+1 is an r-value
     // int* px1 = &(x+1);     // illegal for r-value
     // (x+1) = 10;            // illegal for r-value
-    // int& r1 = (x+1);       // illegal for r-value
-    //int* px11 = &r1;
-    //r1 = 10;
-
-    const int& r2 = (x+1);
+    // int& r1 = (x+1);       // illegal for r-value...
+    // int* px11 = &r1;       //    ... since it would allow us to do this:
+    // r1 = 10;
+ 
+    const int& r2 = (x+1);   
     cout << "r2 = " << r2 << endl;
-    //int* px2 = &r2;      // illegal for const reference
-    //(*px2) = 10;
+    //int* px2 = &r2;      // illegal for const reference... 
+    //(*px2) = 10;         //    ... since it would allow us to do this
     //r2 = 10;             // illegal for const reference
     //int& r3 = r2;        // illegal for const reference
-
 }
