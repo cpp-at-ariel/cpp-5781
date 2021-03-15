@@ -29,37 +29,20 @@ int& g4() {
 
 
 int main() {
-    int num1 = g1();
-    int num2 = g2();
-    // int& rnum1 = g1();  // compilation error
-    int& rnum2 = g2();    // OK
-    cout << "num1 = " << num1 << endl;
-    cout << "num2 = " << num2 << endl;
-    cout << "rnum2 = " << rnum2 << endl;
     cout << "globalnum = " << globalnum << endl;
-
-    num1++;
-    cout << "globalnum = " << globalnum << endl;
-    num2++;
-    cout << "globalnum = " << globalnum << endl;
-    rnum2++;
-    cout << "globalnum = " << globalnum << endl << endl;
-
-    const int& crnum1 = g1();
-    const int& crnum2 = g2();
-    cout << "crnum1 = " << &crnum1 << " " << crnum1 << endl;
-    cout << "crnum2 = " << &crnum2 << " " << crnum2 << endl;
-
-    cout << "globalnum = " << globalnum << endl;
+    cout << "g1() = " << g1() << endl;
     cout << "g2() = " << g2() << endl;
-    //g1() = 13;    // error: expression is not assignable
-    g2() = 22;      // changes globalnum
-    cout << "globalnum = " << globalnum << endl;
-    cout << "g2() = " << g2() << endl;
-
-    //g3() = 33; // compilation error
-
+    cout << "g3() = " << g3() << endl;
     cout << "g4() = " << g4() << endl;
-    g4() = 14;
+
+    // g1()=111;
+    g2()=222;
+    // g3()=333;
+    g4()=444;
+
+    cout << endl << "globalnum = " << globalnum << endl;
+    cout << "g1() = " << g1() << endl;
+    cout << "g2() = " << g2() << endl;
+    cout << "g3() = " << g3() << endl;
     cout << "g4() = " << g4() << endl;
 }

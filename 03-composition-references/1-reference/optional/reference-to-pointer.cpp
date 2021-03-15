@@ -1,5 +1,5 @@
 /**
- * Demonstrates assigning values to references in C++.
+ * Demonstrates converting references to pointers.
  * @author Erel Segal-Halevi
  * @since 2018-02
  */

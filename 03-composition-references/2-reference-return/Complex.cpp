@@ -14,7 +14,7 @@ class Complex {
 public:
     Complex() {  _re = _im  = 0; }    // inline constructor
 
-    Complex setReal(double r) { 
+    Complex& setReal(double r) { 
         _re = r; 
         return *this;
     }
@@ -48,7 +48,7 @@ int main() {
 }
 
 
-// When setReal returns Complex&:
+// When setReal returns Complex& this is what happens in memory:
 //
 // Initial memory:
 //    a: re=0 im=0
@@ -60,7 +60,7 @@ int main() {
 //    a: re=1 im=2
 
 
-// When setReal returns Complex:
+// When setReal returns Complex (without &) this is what happens in memory:
 //
 // Initial memory:
 //    a: re=0 im=0
