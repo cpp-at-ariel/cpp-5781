@@ -20,17 +20,9 @@ public:
 	static void print4(ostream& out, const MyClass& obj); // static function
 };
 
-void set(int i, MyClass& obj) {
-	obj.myField = i;
-}
-
 void MyClass::print1(ostream& out)  const {
 	out << this << endl;
 	out << "print1: " << myField << endl;
-}
-
-void print3(ostream& out, const MyClass& obj) {
-   	out << "print3: " << obj.myField << endl;
 }
 
 void print2(ostream& out, const MyClass& obj) {
@@ -38,6 +30,14 @@ void print2(ostream& out, const MyClass& obj) {
 	out << "print2: " << obj.myField << endl;
 }
 
+void print3(ostream& out, const MyClass& obj) {
+   	//out << "print3: " << obj.myField << endl;  // Compile error
+}
+
+
+void set(int i, MyClass& obj) {
+	obj.myField = i;
+}
 
 
 void MyClass::print4(ostream& out, const MyClass& obj) {
@@ -50,14 +50,7 @@ int main() {
 	obj.print1(cout);
 	print2(cerr, obj);
 	MyClass::print4(cerr, obj);
-	// obj.print2(cerr);
+	// obj.print2(cerr);  // Compile error
 
-	int i=5;
-	int* j = &i;
-	cout << (*j) << endl;
-
-	int& r = i;
-	cout << r << endl;
-	
 	return 0;
 }

@@ -19,7 +19,6 @@ public:
             //this++; // compile error
         }
 
-
     double real() const {  // getter
         //_im = 7;  // compile error
         cout << "real const" << endl;
@@ -31,11 +30,7 @@ public:
         return _re;
     }
 
-    Complex& set() {  // works but not needed
-        return *this;
-    }
-
-    string to_string() {           // inline method  
+    string to_string() { 
         return std::to_string(_re)+"+"+std::to_string(_im)+"i";
     }
 };
@@ -45,8 +40,7 @@ int main() {
     a.real() = 5;
     cout << "a.real = " << a.real() << endl;
 
-    a.set() = Complex(6,7);
-    // a = Complex(6,7)
+    a = Complex(6,7);
     cout << "a.real = " << a.real() << endl;
 
     const Complex c;
