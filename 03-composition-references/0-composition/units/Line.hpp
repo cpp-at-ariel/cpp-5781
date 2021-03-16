@@ -3,14 +3,15 @@
 #include <iostream>
 #include "Point.hpp"
 
-
 class Line
 {
 	private:
 		Point p1, p2;
 	public:
+		static int default_value;
+		
 		Line()
-		// : p1{0,0}, p2{0,0}
+		: p1{default_value,default_value}, p2{default_value,default_value}
 		//: p1{}, p2{}  // automatic
 		{ 
 			// p1.setX(0);
@@ -33,3 +34,4 @@ class Line
 		void set(Point,Point);
 		string to_string();
 };
+
