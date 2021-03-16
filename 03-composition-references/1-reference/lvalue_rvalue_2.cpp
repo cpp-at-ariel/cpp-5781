@@ -13,7 +13,7 @@ void test1(int& z) {
 }
 
 void test2(const int& z) {
-    //z = z + 6;
+    // z = z + 6;
 }
 
 
@@ -23,7 +23,7 @@ int main() {
 
     // RIDDLE: Which of the following is legal?
 
-    // test1(x);
+    // test1(x);   
     // test1(x+1);
     // test1(5);
     // test2(x);

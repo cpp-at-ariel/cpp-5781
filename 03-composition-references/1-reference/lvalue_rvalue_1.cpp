@@ -10,6 +10,7 @@ using namespace std;
 
 int main() {
     int x = 5;
+    const int cx = 5;
     // x is an l-value
 
     int* px = &x;  // legal for l-value
@@ -20,10 +21,15 @@ int main() {
     // int* px1 = &(x+1);     // illegal for r-value
     // (x+1) = 10;            // illegal for r-value
     // int& r1 = (x+1);       // illegal for r-value...
+    //int& r1 = cx;       // illegal for r-value...
     // int* px11 = &r1;       //    ... since it would allow us to do this:
     // r1 = 10;
  
-    const int& r2 = (x+1);   
+    const int& r2 = x;
+    //r2++;  // illegal
+    //x++;   // legal
+    // const int& r2 = cx;
+    // const int& r2 = (x+1);
     cout << "r2 = " << r2 << endl;
     //int* px2 = &r2;      // illegal for const reference... 
     //(*px2) = 10;         //    ... since it would allow us to do this

@@ -21,7 +21,7 @@ int main() {
     cout << "pnum = " << pnum << " " << *pnum << " " << num << endl;
     pnum = &num2;
     cout << "pnum = " << pnum << " " << *pnum << " " << num << endl;
-    pnum += 4;
+    pnum += 4; // unsafe
     cout << "pnum = " << pnum << " " << *pnum << " " << num << endl << endl;
 
     cout << "Reference:" << endl;
