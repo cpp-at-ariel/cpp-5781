@@ -22,7 +22,7 @@ const int& g3() {
     return globalnum;
 }
 
-int& g4() {
+int& g4() {   // bug
 	int localnum = 9999;
 	return localnum;
 }
@@ -38,7 +38,7 @@ int main() {
     // g1()=111;
     g2()=222;
     // g3()=333;
-    g4()=444;
+    g4()=444;  
 
     cout << endl << "globalnum = " << globalnum << endl;
     cout << "g1() = " << g1() << endl;

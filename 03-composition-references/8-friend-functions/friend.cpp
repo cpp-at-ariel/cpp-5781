@@ -31,7 +31,7 @@ void print2(ostream& out, const MyClass& obj) {
 }
 
 void print3(ostream& out, const MyClass& obj) {
-   	//out << "print3: " << obj.myField << endl;  // Compile error
+   	// out << "print3: " << obj.myField << endl;  // Compile error
 }
 
 

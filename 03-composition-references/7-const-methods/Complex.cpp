@@ -30,7 +30,7 @@ public:
         return _re;
     }
 
-    string to_string() { 
+    string to_string() const { 
         return std::to_string(_re)+"+"+std::to_string(_im)+"i";
     }
 };
@@ -42,10 +42,12 @@ int main() {
 
     a = Complex(6,7);
     cout << "a.real = " << a.real() << endl;
+    cout << a.to_string() << endl;
 
     const Complex c;
     // c.real() = 5;
     cout << "c.real = " << c.real() << endl;
+    cout << c.to_string() << endl;
 
     return 0;
 }
