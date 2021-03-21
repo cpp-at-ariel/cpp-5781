@@ -42,29 +42,25 @@ int operator* (int a, int b) {
 }
 */
 
+
 ostream& operator<< (ostream& os, string s) {
     //os << s;  // segmentation fault
+    std::operator<<(os,'"');
     std::operator<<(os,s);
+    std::operator<<(os,'"');
     return os;
 }
 
-// int oper//ator+(const vector<int>& y, int x) {
-//     int //sum = x;
-//     for //(int i=0; i<y.size(); ++i)
-//         sum += y[i];
-//     return sum;
-// }
+void operator+(string s) {
+    cout << s << endl;
+}
 
 int main() {
-    //int i=5;
-    //cout << ((i--)-i) << endl;
-    //return 0;
-
     string x="abc", y="def";
     
     cout << "3 * y  = " << 3 * y << endl;
     //Equivalent to: 
-    // cout << operator*(3,y) << endl;
+    cout << operator*(3,y) << endl;
     cout << "0 * y  = " << 0 * y << endl;
 
     cout << "x + y = " << (x+y) << endl;  // defined here: https://gcc.gnu.org/onlinedocs/gcc-4.6.2/libstdc++/api/a01075_source.html

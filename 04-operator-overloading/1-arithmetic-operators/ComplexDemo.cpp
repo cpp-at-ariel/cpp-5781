@@ -19,6 +19,8 @@ int main(int argc, char **argv) {
     Complex c2(2,3);
     Complex c3(3,4);
 
+    cout << "c1=" << c1 << "   c2=" << c2 << "  c3=" << c3 << endl;
+
     (c1 += c2) += c3;  // c1 SHOULD get the sum c1+c2+c3 = 6+9i
     // If we return Complex& (by reference), this is equivalent to:
     // c1 += c2;              // c1 = 3 + 5i;
@@ -32,7 +34,13 @@ int main(int argc, char **argv) {
 
     cout << "c1=" << c1 << "   c2=" << c2 << "  c3=" << c3 << endl;
 
-    (c1 + c2) + c3;
+    cout << (c1 + c2) + c3 << endl;
+
+    // Complex c11(1,2);
+    // Complex c22(2,3);
+    // c11 *= c22;
+    // cout << "c11 = " << c11 << endl;  // should print: -4+7i
+
     // Equivalent to:
     // Complex c_temp_1 = c1 + c2;
     // Complex c_temp_2 = c_temp_1 + c3;
@@ -46,52 +54,52 @@ int main(int argc, char **argv) {
     cout << (((a += b) += b)  += b) << endl;
     cout << "a = " << a << endl;
 
-    Complex c1(1,2), c2(3), c3;
-    cout << "c1 = " << c1 << " !!" << endl;
+    // Complex c1(1,2), c2(3), c3;
+    // cout << "c1 = " << c1 << " !!" << endl;
 
-    Complex minus_c1 = -c1;
-    cout << "-c1 = " << (-c1) << endl;
+    // Complex minus_c1 = -c1;
+    // cout << "-c1 = " << (-c1) << endl;
 
-    c1 += c2;
-    cout << "c1 = " << c1 << " !!" << endl;
+    // c1 += c2;
+    // cout << "c1 = " << c1 << " !!" << endl;
 
-    cout << boolalpha << (c1 ^ c2) << endl;
-    cout << boolalpha << (c1 ^ Complex{1,2}) << endl;
-    // const Complex c4(6,7);
-    // cout << -c4 << endl;
-    cout << "c1 = " << c1 << endl << "c2 = " << c2 << endl << "c3 = " << c3 << endl << endl;    
-    cout << ++c1 << endl;
-    cout << ++++c1 << endl;
-    cout << ++++++++++++++++++++c1 << endl;
-    // cout << c1++++ << endl;
-    cout << "c1 + c2 = " << (c1 + c2) << endl;
-    cout << "c1 = " << c1 << endl;
-    //cout << "c1 += c2 = " << (c1 += c2) << endl;
-    cout << "c1 = " << c1 << endl << endl;
-    cout << "c1 += c2 += c2 += c2 = " << (c1 += c2 += c2 += c2 += c2) << endl;
-    // Complex c9 = c1+c2;
-    // (c1+c2) = 5;
+    // cout << boolalpha << (c1 ^ c2) << endl;
+    // cout << boolalpha << (c1 ^ Complex{1,2}) << endl;
+    // // const Complex c4(6,7);
+    // // cout << -c4 << endl;
+    // cout << "c1 = " << c1 << endl << "c2 = " << c2 << endl << "c3 = " << c3 << endl << endl;    
+    // cout << ++c1 << endl;
+    // cout << ++++c1 << endl;
+    // cout << ++++++++++++++++++++c1 << endl;
+    // // cout << c1++++ << endl;
+    // cout << "c1 + c2 = " << (c1 + c2) << endl;
+    // cout << "c1 = " << c1 << endl;
+    // //cout << "c1 += c2 = " << (c1 += c2) << endl;
+    // cout << "c1 = " << c1 << endl << endl;
+    // cout << "c1 += c2 += c2 += c2 = " << (c1 += c2 += c2 += c2 += c2) << endl;
+    // // Complex c9 = c1+c2;
+    // // (c1+c2) = 5;
 
-    cout << "c1 + 5+6i + 6+5i = " << (c1 + Complex(5,6) + Complex(6,5)) << endl;
+    // cout << "c1 + 5+6i + 6+5i = " << (c1 + Complex(5,6) + Complex(6,5)) << endl;
 
-    cout << "c1 = " << c1 << endl << "c2 = " << c2 << endl << "c3 = " << c3 << endl << endl;
+    // cout << "c1 = " << c1 << endl << "c2 = " << c2 << endl << "c3 = " << c3 << endl << endl;
 
-    c1.operator+=(c2); // equivalent to c1+=c2;
-    cout << "c1 = " << c1 << endl;
-    // Equivalent to:
-    // cout << "c1 = ";
-    // cout << c1;
-    // cout << endl;
-    cout << "c1 << cout:" << endl;
-    //c1 << cout;
+    // c1.operator+=(c2); // equivalent to c1+=c2;
+    // cout << "c1 = " << c1 << endl;
+    // // Equivalent to:
+    // // cout << "c1 = ";
+    // // cout << c1;
+    // // cout << endl;
+    // cout << "c1 << cout:" << endl;
+    // //c1 << cout;
 
-    cout << "-c1 = " << -c1 << endl;
-    cout << "c1 = " << c1 << endl;
-    //-c1 = Complex(5,6);
-    cout << "-c1 = " << -c1 << endl;
+    // cout << "-c1 = " << -c1 << endl;
+    // cout << "c1 = " << c1 << endl;
+    // //-c1 = Complex(5,6);
+    // cout << "-c1 = " << -c1 << endl;
 
-    cout << "c1++ = " << c1++ << endl;
-    cout << "++c1 = " << ++c1 << endl;
+    // cout << "c1++ = " << c1++ << endl;
+    // cout << "++c1 = " << ++c1 << endl;
 
     // cout << "c1+c2 = " << (c1+c2) << endl;
     // cout << "c1+c2 = " << operator+(c1,c2) << endl << endl;

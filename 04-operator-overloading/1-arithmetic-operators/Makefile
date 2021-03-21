@@ -1,6 +1,28 @@
-CXX=clang++-9
-CXXFLAGS=-std=c++2a
+# A generic makefile for running single-file C++ projects.
+#
+# AUTHOR: Erel Segal-Halevi
 
-all: 
-	$(CXX) $(CXXFLAGS) Complex.cpp ComplexDemo.cpp
-	./a.out
+CXX=clang++-9
+RM=rm -f
+CPPFLAGS=-std=c++2a
+
+ifndef MAIN
+  MAIN=./main.cpp
+endif
+
+MAINEXECUTABLE=$(subst .cpp,,$(MAIN)).exe
+
+SOURCES=$(MAIN) Complex.cpp
+HEADERS=Complex.hpp
+
+all: $(MAINEXECUTABLE)
+	$(MAINEXECUTABLE)
+
+$(MAINEXECUTABLE): $(SOURCES) $(HEADERS)
+	$(CXX) $(CPPFLAGS) $(SOURCES) -o $(MAINEXECUTABLE)
+
+valgrind:
+	valgrind --tool=memcheck $(MAINEXECUTABLE)
+
+clean:
+	$(RM) *.exe a.out *.class

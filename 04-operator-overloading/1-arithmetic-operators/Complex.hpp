@@ -70,8 +70,7 @@ public:
     // (c1+c2) = 5;
     
     const Complex operator+(const Complex& other) const {
-         return Complex(_re + other._re, _im + other._im);
-        //  5+7=12;
+        return Complex(_re + other._re, _im + other._im);
     }
 
     Complex& operator+=(const Complex& other) {

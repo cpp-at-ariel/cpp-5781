@@ -62,8 +62,8 @@ Complex operator"" i(unsigned long long x) {
 
 
 int main() {
-	// #include "test.hpp"
 	int timeInSeconds = 1_h + 30_m + 12_s;
+
 	// 1_h  is compiled to
 	//   operator"" _h(1)
 	cout << "1_h + 30_m + 12_s = " << timeInSeconds << endl;
