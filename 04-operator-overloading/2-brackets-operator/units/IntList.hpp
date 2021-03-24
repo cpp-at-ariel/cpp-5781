@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 
 class IntList {
@@ -49,13 +50,13 @@ class IntList {
             return theInts[0];
           else if (s==string("last"))
             return theInts[numInts-1];
-          else throw string("Illegal argument: "+s);
+          else throw invalid_argument{"invalid argument: "+s};
         }
         int& operator[] (string s)  {
           if (s==string("first"))
             return theInts[0];
           else if (s==string("last"))
             return theInts[numInts-1];
-          else throw string("Illegal argument: "+s);
+          else throw invalid_argument{"invalid argument: "+s};
         }
 };
