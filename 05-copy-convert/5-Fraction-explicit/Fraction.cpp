@@ -22,7 +22,7 @@ public:
 	// Add "explicit" in one of the lines below to allow compilation of last line.
 	// See	https://stackoverflow.com/a/49092822/827927
 	Fraction(int nn): Fraction(nn, 1) { }  //conversion constructor
-	explicit operator double() const {
+	operator double() const {
 		cout << "converting Fraction to double" << endl;
 		return double(nom) / double(den);
 	}
@@ -73,16 +73,13 @@ int main() {
 	cout << "d1 = " << d1 << endl;
 
 	// Implicit conversion from double to fraction:
-	//cout << "sqrt(f1) = " << sqrt(f1) << endl;
-	//cout << "std::sqrt(f1) = " << std::sqrt(f1) << endl;
-	//cout << "sin(f1) = " << sin(f1) << endl;
+	cout << "sqrt(f1) = " << sqrt(f1) << endl;
+	cout << "std::sqrt(f1) = " << std::sqrt(f1) << endl;
+	cout << "sin(f1) = " << sin(f1) << endl;
 
 	Fraction f2 {2};  // explicit - will work even if constructor is explicit.	
 	Fraction f3 (3);  // explicit - will work even if constructor is explicit.
 	//Fraction f4 = 4;  // implicit - won't work if constructor is explicit.
-
-	//double d = static_cast<double>(f1);
-	// cout << "d = " << d << endl;
 
 	//Fraction farray[5] {2,3,4,5,6};  // 5 times implicit constructor
 	//Fraction farray[5] (2,3,4,5,6);  // does not compile
@@ -90,12 +87,12 @@ int main() {
 	cout << "f2 = " << f2 << endl;
 	cout << ((Fraction)2) << endl;
 	cout << "f1+2 = " << (f1 + Fraction{2}) << endl;   // OK! explicit conversion constructor
-	// cout << "f1+2 = " << ((double)f1 + 2) << endl;    // OK! explicit conversion operator
-	cout << "f1+2 = " << (f1 + 2) << endl;   // ambiguous! implicit conversion
-	cout << "2+f1 = " << (2 + f1) << endl;   // ambiguous! implicit conversion
+	cout << "f1+2 = " << ((double)f1 + 2) << endl;    // OK! explicit conversion operator
+	// cout << "f1+2 = " << (f1 + 2) << endl;   // ambiguous! implicit conversion
+	// cout << "2+f1 = " << (2 + f1) << endl;   // ambiguous! implicit conversion
 
-	cout << "f1-2 = " << (f1 - 2) << endl;   
-	cout << "2-f1 = " << (2 - f1) << endl;   
+	// cout << "f1-2 = " << (f1 - 2) << endl;   
+	// cout << "2-f1 = " << (2 - f1) << endl;   
 
 	return 0;
 }

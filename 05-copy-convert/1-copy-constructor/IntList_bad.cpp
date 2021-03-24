@@ -66,7 +66,7 @@ int main() {
     cout << "list1[5] = " << list1[5] << endl << endl;
     cout << "---" << endl;
 
-    IntList list2 = list1;
+    IntList list2 = list1; // equivalent to:
     // IntList list2 {list1};
     // IntList list2 (list1);
     cout << "list1[5] = " << list1[5] << endl;
