@@ -1,5 +1,6 @@
 /**
- * A demo of output formatting
+ * A demo of input format errors.
+ * 
  * @author Erel Segal-Halevi
  * @since  2019-03
  */
@@ -15,8 +16,10 @@ int main() {
     int i=9999;
     cout << i << endl;
     istringstream input("123");
-    if (input) cout <<"input is OK"<<endl; else cout << "input is wrong"<<endl;
+    cout << "Before reading: ";
+    if (input) {cout <<"input is OK"<<endl;} else {cout << "input is wrong"<<endl;}
     input >> i;
-    if (input) cout <<"input is OK"<<endl; else cout << "input is wrong"<<endl;
+    cout << "After reading: ";
+    if (input) {cout <<"input is OK"<<endl;} else {cout << "input is wrong"<<endl;}
     cout << i << endl;
 }

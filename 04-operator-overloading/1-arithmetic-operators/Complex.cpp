@@ -13,10 +13,15 @@ using namespace std;
 // friend global binary operators
 //----------------------------------------
 
+const Complex operator-(const Complex& c1, const Complex& c2) {
+    return Complex(c1._re - c2._re, c1._im - c2._im);
+}
 const Complex operator*(const Complex& c1, const Complex& c2) {
     return Complex (c1._re * c2._re - c1._im * c2._im,
                     c1._re * c2._im + c1._im * c2._re);
 }
+
+const float TOLERANCE = 0.001;
 
 bool operator==(const Complex& c1, const Complex& c2) {
     // this implementation can cause problems with
@@ -26,19 +31,11 @@ bool operator==(const Complex& c1, const Complex& c2) {
 
 bool operator!=(const Complex& c1, const Complex& c2) {
     return ( (c1._re!=c2._re) || (c1._im!=c2._im) );
-    //return (!(c1==c2));
-    return ( abs(c1._re-c2._re)>0.0001 || abs(c1._im-c2._im)>0.0001 );
-}
-
-bool operator^(const Complex& c1, const Complex& c2) {
-    return ( (c1._re!=c2._re) || (c1._im!=c2._im) );
     // return (!(c1==c2));
+    // return ( abs(c1._re-c2._re)>TOLERANCE || abs(c1._im-c2._im)>TOLERANCE );
 }
 
 
-const Complex operator-(const Complex& c1, const Complex& c2) {
-    return Complex(c1._re - c2._re, c1._im - c2._im);
-}
 
 
 //----------------------------------------

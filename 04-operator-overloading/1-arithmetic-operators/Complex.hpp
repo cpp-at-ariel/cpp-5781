@@ -1,3 +1,4 @@
+#pragma once
 /**
  * Header file for the Complex class.
  * 
@@ -5,10 +6,8 @@
  * @since 2017
  */
 
-#pragma once
 
 #include <iostream>
-using namespace std;
 
 class Complex {
 
@@ -53,7 +52,7 @@ public:
     }
 
     // the const on the return type is to
-    // avoid -c1 = c10 from working
+    // ensure that -c1 = c10 does not compile
     const Complex operator-() const {
         return Complex(-_re , -_im);
         // longer version:
@@ -103,12 +102,6 @@ public:
     }
     //----------------------------------------
 
-    /*
-    operator double() const {
-        return todouble();
-    }
-    */
-
     // prefix increment:
     Complex& operator++() {
         _re++;
@@ -123,16 +116,19 @@ public:
     }
     
 
-    /* Works, but unexpected - don't do it */
-    ostream& operator<< (ostream& os) const {
+    /* 
+    // Compile error:
+    std::ostream& operator<< (std::ostream& os, const Complex& c) const {
         os << "(" << _re << "+" << _im << "i)";
         return os;
     }
-    
-    // ostream& operator<< (ostream& os, const Complex& c) const {
-    //     os << "(" << _re << "+" << _im << "i)";
-    //     return os;
-    // }
+
+    // Compiles, but unexpected - don't do it:
+    std::ostream& operator<< (std::ostream& os) const {
+        os << "(" << _re << "+" << _im << "i)";
+        return os;
+    }
+    */
     
 
     //-------------------------------------
@@ -143,13 +139,11 @@ public:
     friend bool operator==(const Complex& c1, const Complex& c2);
     friend bool operator!=(const Complex& c1, const Complex& c2);
 
-    friend bool operator^(const Complex& c1, const Complex& c2);
-
-    
+   
     //----------------------------------
     // friend global IO operators
     //----------------------------------
-    friend ostream& operator<< (ostream& os, const Complex& c);
-    friend istream& operator>> (istream& is, Complex& c);
+    friend std::ostream& operator<< (std::ostream& os, const Complex& c);
+    friend std::istream& operator>> (std::istream& is, Complex& c);
     //-------------------------------------
 }; // end of class Complex

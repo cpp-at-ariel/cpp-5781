@@ -8,8 +8,6 @@
 #include <vector>
 using namespace std;
 
-// int operator*(int a, int b) { return 0; }
-
 string operator* (int n, string s){ 
     string result = "";
     for (int i=0; i<n; ++i)
@@ -26,34 +24,29 @@ bool operator!(string s) {
 }
 
 string operator+(string a, string b) {
-//    return b+a;   // segmentation fault - stack overflow!
-
-//    string result = b;
-//    result += a;
-//    return result;
-
+//    return b+a;   // stack overflow
     return std::operator+(b,a);
-    //return "555";
 }
 
-/* Compiler error: 
+/* Compiler errors: 
 int operator* (int a, int b) {
+    return a+b;
+}
+
+int operator@ (int a, int b) {
     return a+b;
 }
 */
 
 
 ostream& operator<< (ostream& os, string s) {
-    //os << s;  // segmentation fault
+    //os << s;  // stack overflow
     std::operator<<(os,'"');
     std::operator<<(os,s);
     std::operator<<(os,'"');
     return os;
 }
 
-void operator+(string s) {
-    cout << s << endl;
-}
 
 int main() {
     string x="abc", y="def";
@@ -78,6 +71,5 @@ int main() {
         cout << "x is not empty" << endl;
     }
     
-    //cout << operator*(x,3) << endl;
     return 0;
 }
