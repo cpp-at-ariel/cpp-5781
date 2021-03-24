@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
 
     cout << "c1=" << c1 << "   c2=" << c2 << "  c3=" << c3 << endl;
     cout << "-c1 = " << (-c1) << endl;
+    // (-c1) is equivalent to: c1.operator-()
 
     (c1 += c2) += c3;  // c1 SHOULD get the sum c1+c2+c3 = 6+9i
     cout << "c1=" << c1 << "   c2=" << c2 << "  c3=" << c3 << endl;
