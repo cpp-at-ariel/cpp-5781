@@ -29,13 +29,13 @@ int main() {
 
     list0[5] = 11;
     // equivalent to:
-    //list0.operator[](5) = 11;
+    // list0.operator[](5) = 11;
 
     cout << "list0[5] = " << list0[5] << endl;
 
     const IntList clist(10, 88);
     cout << "clist[5] = " << clist[5] << endl;
-    //clist[5] = 5;
+    // clist[5] = 5;
 
     list0[0] = 123;
     list0[999] = 456;

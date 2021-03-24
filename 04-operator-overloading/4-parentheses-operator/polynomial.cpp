@@ -34,6 +34,7 @@ class Polynomial {
 			return 0; }
 };
 
+
 int maximize(Polynomial p, int from, int to) {
 	// Find the maximum value of the given polynomial over all integers between from and to
 	int result = -INT32_MAX;
@@ -52,6 +53,8 @@ int minimize(Polynomial p, int from, int to) {
 int main() {
 	Polynomial poly1(2,3,4);
 	cout << "poly1(5) = " << poly1(5) << endl; // prints 69
+	// equivalent to:
+	//  poly1.operator()(5)
 	cout << "Polynomial(2,3,4)(5) = " << Polynomial(2,3,4)(5) << endl; // prints 69
 	cout << "poly1() = " << poly1() << endl; // prints 0
 

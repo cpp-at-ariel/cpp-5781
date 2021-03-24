@@ -18,18 +18,9 @@ class IntList {
             theInts(new int[newNumInts]) 
             {  }
 
-        // conversion constructor
-        IntList(const string& other): 
-            numInts(2), 
-            theInts(new int[2]) 
-            {  
-                cout << "converting string to IntList" << endl;
-
-            }
-
 
         IntList(const IntList& other): 
-        //IntList(IntList other): 
+        // IntList(IntList other): 
             IntList(other.numInts) 
         {
             cout << "copy constructor doing deep copy" << endl;
@@ -89,7 +80,6 @@ int sum(const IntList& list) {
     for (int i=0; i<list.size(); ++i) {
         result += list[i];
     }
-    //list[5] = 88;
     return result;
 }
 
@@ -99,13 +89,16 @@ int main() {
     cout << "list1[5] = " << list1[5] << endl;
     list1 = 1;
     cout << "list1[5] = " << list1[5] << endl << endl;
+
     cout << "sum(list1) = " << sum(list1) << endl;
+
     cout << "list1[5] = " << list1[5] << endl << endl;
     cout << "---" << endl;
 
-    //IntList list2 {list1};     // calls copy ctor
-    //IntList list2 (list1);  // calls copy ctor
-    IntList list2 = list1;  // calls copy ctor
+    //IntList list2 {list1}; // calls copy ctor
+    //IntList list2 (list1); // calls copy ctor
+    IntList list2 = list1;   // calls copy ctor
+
     cout << "list1[5] = " << list1[5] << endl;
     cout << "list2[5] = " << list2[5] << endl;
     list2 = 2;
@@ -121,6 +114,9 @@ int main() {
     cout << "list1[5] = " << list1[5] << endl;
     cout << "list3[5] = " << list3[5] << endl << endl;
 
+    cout << "sum(list3) = " << sum(list3) << endl;
+
+
     list3 = list3;
     cout << "list3[5] = " << list3[5] << endl;
 
@@ -133,8 +129,5 @@ int main() {
     cout << "---" << endl;
     IntList list4 = list2 = list1;
 
-    list4 = string("abc");
-    IntList list5 = string("def");
-    cout << "list4[5] = " << list4[5] << endl;
     return 0;
 }
