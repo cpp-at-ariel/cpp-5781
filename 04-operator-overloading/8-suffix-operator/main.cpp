@@ -35,7 +35,7 @@ public:
 	}
     friend ostream& operator<< (ostream& os, const Complex& c);
     friend const Complex operator+ (const Complex& c1, const Complex& c2);
-	friend const Complex operator+ (int r, const Complex& c2);
+	friend const Complex operator+ (double r, const Complex& c2);
 };
 
 
@@ -47,14 +47,14 @@ const Complex operator+(const Complex& c1, const Complex& c2) {
     return Complex(c1._re + c2._re, c1._im + c2._im);
 }
 
-const Complex operator+(int r, const Complex& c2) {
+const Complex operator+(double r, const Complex& c2) {
     return Complex(c2._re + r, c2._im);
 }
 
 /**
  * This is the suffix operator.
  */
-Complex operator"" i(unsigned long long x) {
+Complex operator"" i(long double x) {
 	// return Complex { 0, static_cast<double>(x) };
 	return Complex { 0, (double)x };
 }
@@ -76,9 +76,9 @@ int main() {
 	cout << "d = " << d << endl;
 	cout << "c+d = " << c+d << endl;
 
-	cout << "4+5i = " << (4 + 5i) << endl;
+	cout << "4+5i = " << (4 + 5.0i) << endl;
 
-	Complex e = c + (6 + 7i);
+	Complex e = c + (6 + 7.0i);
 	cout << "e = " << e << endl;
 
 	//cout << typeid("abc").name() << " " << typeid("abc"s).name() << endl;
