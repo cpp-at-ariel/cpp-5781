@@ -21,17 +21,18 @@ class Polynomial {
 		Polynomial(double a, double b, double c): 
 			_a(a), _b(b), _c(c)			{  }
 
-		Polynomial operator-() {
+		const Polynomial operator-() const {
 			return Polynomial(-_a, -_b, -_c);
 		}
 
-		double operator() (double x) { 
+		double operator() (double x) const { 
 			return _a*x*x + _b*x + _c; }
 		// double getValue(double x) {   // Java style
 		// 	return _a*x*x + _b*x + _c; }
 
-		double operator()() { 
-			return 0; }
+		double operator()() const { 
+			return 0; 
+		}
 };
 
 
@@ -60,7 +61,7 @@ int main() {
 
 	Polynomial poly2(5);
 	cout << "poly2(5) = " << poly2(5) << endl; 
-	cout << "Polynomial(2)(5) = " << Polynomial(5)(5) << endl; // prints 125
+	cout << "Polynomial(5)(5) = " << Polynomial(5)(5) << endl; // prints 125
 
 	cout << "minimize (x^2 + 3, -10, 10) = " << minimize(Polynomial(1,0,3), -10, 10) << endl;
 
