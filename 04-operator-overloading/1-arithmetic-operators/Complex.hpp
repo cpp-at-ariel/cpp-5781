@@ -67,10 +67,7 @@ public:
     //----------------------------------------
 
     // (c1+c2) = 5;
-    
-    const Complex operator+(const Complex& other) const {
-        return Complex(_re + other._re, _im + other._im);
-    }
+    const Complex operator+(const Complex& other) const;
 
     Complex& operator+=(const Complex& other) {
         _re+= other._re;
@@ -96,8 +93,8 @@ public:
         _re = new_re;
         _im = new_im;
 		// version with bug
-		// _im= _re*other._im + _im*other._re; 
-		// _re= _re*other._re - _im*other._im;
+		// _im = _re*other._im + _im*other._re; 
+		// _re = _re*other._re - _im*other._im;
 		return *this;
     }
     //----------------------------------------

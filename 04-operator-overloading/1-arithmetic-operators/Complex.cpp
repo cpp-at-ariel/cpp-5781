@@ -9,6 +9,17 @@
 
 using namespace std;
 
+
+
+//----------------------------------------
+// method operators
+//----------------------------------------
+
+const Complex Complex::operator+(const Complex& other) const {
+    return Complex(_re + other._re, _im + other._im);
+}
+
+
 //----------------------------------------
 // friend global binary operators
 //----------------------------------------
@@ -16,10 +27,12 @@ using namespace std;
 const Complex operator-(const Complex& c1, const Complex& c2) {
     return Complex(c1._re - c2._re, c1._im - c2._im);
 }
+
 const Complex operator*(const Complex& c1, const Complex& c2) {
     return Complex (c1._re * c2._re - c1._im * c2._im,
                     c1._re * c2._im + c1._im * c2._re);
 }
+
 
 const float TOLERANCE = 0.001;
 
