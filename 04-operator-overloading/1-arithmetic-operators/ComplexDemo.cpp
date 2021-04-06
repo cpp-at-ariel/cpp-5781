@@ -60,28 +60,31 @@ int main(int argc, char **argv) {
     cout << "++++++++++++++++++++c1 = " << ++++++++++++++++++++c1 << endl;
     // cout << c1++++ << endl;
 
-   
+    if (!c11) {
+        cout << "c11 is zero" << endl;
+    }
+
     cout << endl << "**** DEMONSTRATE THE INPUT OPERATOR ****" << endl;
 
     if (argc==2) {
         cout << "Reading a complex number from the console:" << endl;
-        cout << "Before: c1 = " << c1<<endl;
+        cout << "Before: c1 = " << c1 << endl;
         cout << "Enter a complex number: ";
         cin >> c1;
         if (!cin) {
             cout << "Error! Wrong format!" << endl;
         }
-        cout << "After:  c1 = " << c1<<endl << endl;
+        cin.clear();
+        cout << "After: c1 = " << c1 << endl;
     } else {
-
         cout << "Reading a complex number from a file:" << endl;
-        cout << "Before: c2 = " << c2<<endl;
-        const char* filename = "inputs/w2.txt";
+        const char* filename = "inputs/ok1.txt";
         ifstream fin(filename);
         if (!fin) {
             cerr << "File " << filename << " not open" << endl;
             return 1;
         }
+        cout << "Before: c2 = " << c2 << ". fin position = " << fin.tellg() << endl;
         fin >> c2;
         if (!fin) {
             if (fin.bad()) {
@@ -90,8 +93,9 @@ int main(int argc, char **argv) {
             }
             cout << "Error in format in file " << filename << endl;
             cout << endl;
+            fin.clear();
         }
-        cout << "After:  c2 = " << c2 << endl << endl;
+        cout << "After: c2 = " << c2 << ". fin position = " << fin.tellg() << endl;
 
         // Demonstrates using istringstream for testing the input operator
         cout << "Reading a complex number from a string:" << endl;
