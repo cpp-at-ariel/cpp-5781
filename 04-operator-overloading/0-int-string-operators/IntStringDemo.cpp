@@ -5,10 +5,13 @@
  */
 
 #include <iostream>
+#include <string>
 #include <vector>
-using namespace std;
+// using namespace std;
+using std::string, std::cout, std::ostream, std::endl;
 
-string operator* (int n, string s){ 
+
+string operator* (int n, string s) { 
     string result = "";
     for (int i=0; i<n; ++i)
         result += s;
@@ -16,7 +19,7 @@ string operator* (int n, string s){
 }
 
 string operator* (string s, int n) {
-    return "("+n*s+")";
+    return "(" + n*s + ")";
 }
 
 bool operator!(string s) {
@@ -47,11 +50,11 @@ ostream& operator<< (ostream& os, string s) {
     return os;
 }
 
-
 int main() {
     string x="abc", y="def";
     
     cout << "3 * y  = " << 3 * y << endl;
+    cout << "y * 3  = " << y * 3 << endl;
     //Equivalent to: 
     cout << operator*(3,y) << endl;
     cout << "0 * y  = " << 0 * y << endl;
@@ -64,7 +67,7 @@ int main() {
 
     cout << "!x = " << (!x) << endl;
 
-    //x = "";
+    // x = "";
     if (!x) {
         cout << "x is empty" << endl;
     } else {
