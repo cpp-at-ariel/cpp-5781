@@ -58,7 +58,7 @@ int main()
 	cout << "d1.Base::vari() = " << d1.Base::vari() << endl;
 
 	// cout << d1._vari << endl;
-	//cout << d1.vari() << endl;
+	
 	cout << "d1.vari2() = " << d1.vari2() << endl;
 	cout << "---" << endl;
 	Derived d2(6, 8);

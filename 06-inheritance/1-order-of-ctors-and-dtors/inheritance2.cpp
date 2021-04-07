@@ -42,7 +42,7 @@ class Derived : public Base, public MyClass
 {
 public:
 	Derived(): _otherObj(), _myObj() { cout << "Derived::default\n"; }
-	Derived(int i, int j) : _myObj(0), Base(i), _varj(j) { cout << "Derived:: int int\n"; }
+	Derived(int i, int j): _myObj(0), Base(i), _varj(j) { cout << "Derived:: int int\n"; }
 	~Derived() { cout << "---\nDerived dtor\n"; }
 	int vari2 () const { return MyClass::vari(); }
 private:
