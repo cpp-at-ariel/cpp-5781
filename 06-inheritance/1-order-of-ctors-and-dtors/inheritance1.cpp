@@ -1,3 +1,10 @@
+/**
+ * Demonstrates single inheritance.
+ * 
+ * @author Erel Segal-Halevi
+ * @since 2020
+ */
+
 #include <iostream>
 using namespace std;
 
@@ -21,7 +28,7 @@ public:
 class Base
 {
 public:
-	Base() : _vari(0) { cout << "Base::default\n"; }
+	Base() : _vari(111) { cout << "Base::default\n"; }
 	Base(int i) : _vari(i) { cout << "Base: int\n"; }
 	~Base() { cout << "Base dtor\n"; }
 	int vari() const { return _vari; }
@@ -33,7 +40,7 @@ class Derived : public Base
 {
 public:
 	Derived(): _otherObj(), _myObj() { cout << "Derived::default\n"; }
-	Derived(int i, int j) : _myObj(0), Base(i), _varj(j) { cout << "Derived:: int int\n"; }
+	Derived(int i, int j) : _myObj(222), Base(i), _varj(j) { cout << "Derived:: int int\n"; }
 	~Derived() { cout << "---\nDerived dtor\n"; }
 	int vari2 () const { return vari(); }
 private:
@@ -47,17 +54,12 @@ int main()
 	cout << "---" << endl;
 	Derived d1;
 	
-	d1.vari();
-	// equivalent to:
-	d1.Base::vari();
-
-	Base b3 = d1;   // slicing
-	// equivalent to:
-	b3 = (Base)d1;
+	cout << "d1.vari() = " << d1.vari() << endl;
+	cout << "d1.Base::vari() = " << d1.Base::vari() << endl;
 
 	// cout << d1._vari << endl;
 	//cout << d1.vari() << endl;
-	cout << d1.vari2() << endl;
+	cout << "d1.vari2() = " << d1.vari2() << endl;
 	cout << "---" << endl;
 	Derived d2(6, 8);
 	cout << "---" << endl;

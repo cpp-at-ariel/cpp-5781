@@ -1,3 +1,10 @@
+/**
+ * Demonstrates multiple inheritance.
+ * 
+ * @author Erel Segal-Halevi
+ * @since 2020
+ */
+
 #include <iostream>
 using namespace std;
 
@@ -48,9 +55,14 @@ int main()
 {
 	cout << "---" << endl;
 	Derived d1;
-	//cout << d1.vari() << endl;
-	cout << d1.myint() << endl;
-	cout << d1.vari2() << endl;
+
+	// cout << "d1.vari() = " << d1.vari() << endl;
+	cout << "d1.Base::vari() = " << d1.Base::vari() << endl;
+	cout << "d1.MyClass::vari() = " << d1.MyClass::vari() << endl;
+
+	cout << "d1.myint() = " << d1.myint() << endl;
+	cout << "d1.vari2() = " << d1.vari2() << endl;
+
 	cout << "---" << endl;
 	Derived d2(6, 8);
 
