@@ -27,7 +27,7 @@ int main() {
     //equivalent to: 
     //cout << "list0[5] = " << list0.operator[](5) << endl;
 
-    list0[5] = 11;
+    list0[5] = 11;       // similar to: list0.set(5, 11);
     // equivalent to:
     // list0.operator[](5) = 11;
 
