@@ -51,9 +51,7 @@ public:
         return _re==0 && _im==0;
     }
 
-    // the const on the return type is to
-    // ensure that -c1 = c10 does not compile
-    const Complex operator-() const {
+    Complex operator-() const {
         return Complex(-_re , -_im);
         // longer version:
         //Complex result;
@@ -66,8 +64,7 @@ public:
     // binary operators
     //----------------------------------------
 
-    // (c1+c2) = 5;
-    const Complex operator+(const Complex& other) const;
+    Complex operator+(const Complex& other) const;
 
     Complex& operator+=(const Complex& other) {
         _re+= other._re;
@@ -106,7 +103,7 @@ public:
     }
 
     // postfix increment:
-    const Complex operator++(int dummy_flag_for_postfix_increment) {
+    Complex operator++(int dummy_flag_for_postfix_increment) {
         Complex copy = *this;
         _re++;
         return copy;
@@ -121,18 +118,18 @@ public:
     }
 
     // Compiles, but unexpected - don't do it:
+
     std::ostream& operator<< (std::ostream& os) const {
-        os << "(" << _re << "+" << _im << "i)";
+        os << "[[" << _re << "+" << _im << "i]]";
         return os;
     }
     */
-    
 
     //-------------------------------------
     // friend global binary operators
     //-------------------------------------
-    friend const Complex operator- (const Complex& c1, const Complex& c2);
-    friend const Complex operator* (const Complex& c1, const Complex& c2);
+    friend Complex operator- (const Complex& c1, const Complex& c2);
+    friend Complex operator* (const Complex& c1, const Complex& c2);
     friend bool operator==(const Complex& c1, const Complex& c2);
     friend bool operator!=(const Complex& c1, const Complex& c2);
 
@@ -140,7 +137,8 @@ public:
     //----------------------------------
     // friend global IO operators
     //----------------------------------
-    friend std::ostream& operator<< (std::ostream& os, const Complex& c);
-    friend std::istream& operator>> (std::istream& is, Complex& c);
+    friend std::ostream& operator<< (std::ostream& output, const Complex& c);
+    friend std::istream& operator>> (std::istream& input , Complex& c);
     //-------------------------------------
 }; // end of class Complex
+

@@ -15,7 +15,7 @@ using namespace std;
 // method operators
 //----------------------------------------
 
-const Complex Complex::operator+(const Complex& other) const {
+Complex Complex::operator+(const Complex& other) const {
     return Complex(_re + other._re, _im + other._im);
 }
 
@@ -24,11 +24,11 @@ const Complex Complex::operator+(const Complex& other) const {
 // friend global binary operators
 //----------------------------------------
 
-const Complex operator-(const Complex& c1, const Complex& c2) {
+Complex operator-(const Complex& c1, const Complex& c2) {
     return Complex(c1._re - c2._re, c1._im - c2._im);
 }
 
-const Complex operator*(const Complex& c1, const Complex& c2) {
+Complex operator*(const Complex& c1, const Complex& c2) {
     return Complex (c1._re * c2._re - c1._im * c2._im,
                     c1._re * c2._im + c1._im * c2._re);
 }
@@ -54,22 +54,23 @@ bool operator!=(const Complex& c1, const Complex& c2) {
 //----------------------------------------
 // friend global IO operators
 //----------------------------------------
-ostream& operator<< (ostream& os, const Complex& c) {
-    return (os << c._re << '+' << c._im << 'i');
+ostream& operator<< (ostream& output, const Complex& c) {
+    return (output << c._re << '+' << c._im << 'i');
     // equivalent to:
-    // os << c._re << '+' << c._im << 'i';
-    // return os;
+    // output << c._re << '+' << c._im << 'i';
+    // return output;
 }
 
 
 static istream& getAndCheckNextCharIs(istream& input, char expectedChar) {
     char actualChar;
     input >> actualChar;
-    if (!input) return input;
+    if (!input) {return input;}
 
-    if (actualChar!=expectedChar) 
+    if (actualChar!=expectedChar) {
         // failbit is for format error
         input.setstate(ios::failbit);
+    }
     return input;
 }
 
@@ -85,7 +86,7 @@ istream& operator>> (istream& input, Complex& c) {
     //---------------------------------------------
     // Checks format, with rewind on failure.
     //---------------------------------------------
-    double new_re, new_im;
+    double new_re = 0, new_im = 0;
 
     // remember place for rewinding
     ios::pos_type startPosition = input.tellg();
