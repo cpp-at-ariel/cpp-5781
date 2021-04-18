@@ -30,9 +30,10 @@ public:
 class Base
 {
 public:
-	Base() : _vari(0) { cout << "Base::default\n"; }
+	// Base() : _vari(0) { cout << "Base::default\n"; }
 	Base(int i) : _vari(i) { cout << "Base: int\n"; }
 	~Base() { cout << "Base dtor\n"; }
+	int baseint() const { return 111; }
 	int vari() const { return _vari; }
 private:
 	int _vari;
@@ -41,7 +42,7 @@ private:
 class Derived : public Base, public MyClass
 {
 public:
-	Derived(): _otherObj(), _myObj() { cout << "Derived::default\n"; }
+	Derived(): _otherObj(), _myObj(), Base(2) { cout << "Derived::default\n"; }
 	Derived(int i, int j): _myObj(0), Base(i), _varj(j) { cout << "Derived:: int int\n"; }
 	~Derived() { cout << "---\nDerived dtor\n"; }
 	int vari2 () const { return MyClass::vari(); }
@@ -56,12 +57,14 @@ int main()
 	cout << "---" << endl;
 	Derived d1;
 
+	cout << "d1.myint() = " << d1.myint() << endl;
+	cout << "d1.myint() = " << d1.baseint() << endl;
+	cout << "d1.vari2() = " << d1.vari2() << endl;
+
 	// cout << "d1.vari() = " << d1.vari() << endl;
 	cout << "d1.Base::vari() = " << d1.Base::vari() << endl;
 	cout << "d1.MyClass::vari() = " << d1.MyClass::vari() << endl;
 
-	cout << "d1.myint() = " << d1.myint() << endl;
-	cout << "d1.vari2() = " << d1.vari2() << endl;
 
 	cout << "---" << endl;
 	Derived d2(6, 8);
