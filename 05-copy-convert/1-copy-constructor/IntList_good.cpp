@@ -29,6 +29,8 @@ class IntList {
         }
 
         IntList& operator=(const IntList& other) {
+            // theInts = other.theInts;
+            // numInts = other.numInts;
             if (this==&other)
                 return *this;
             cout << "assignment operator doing deep copy..." << endl;

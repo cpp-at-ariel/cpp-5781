@@ -16,7 +16,7 @@ using namespace std;
 class Polynomial {
 		double _a,_b,_c;
 	public:
-		Polynomial(double a): 
+		Polynomial(double a=0): 
 			_a(a), _b(0), _c(0)			{  }
 		Polynomial(double a, double b, double c): 
 			_a(a), _b(b), _c(c)			{  }
@@ -30,7 +30,7 @@ class Polynomial {
 		// double getValue(double x) {   // Java style
 		// 	return _a*x*x + _b*x + _c; }
 
-		double operator()() const { 
+		double operator() () const { 
 			return 0; 
 		}
 };
@@ -62,6 +62,9 @@ int main() {
 	Polynomial poly2(5);
 	cout << "poly2(5) = " << poly2(5) << endl; 
 	cout << "Polynomial(5)(5) = " << Polynomial(5)(5) << endl; // prints 125
+
+	// Polynomial poly3;
+	// poly3(5);
 
 	cout << "minimize (x^2 + 3, -10, 10) = " << minimize(Polynomial(1,0,3), -10, 10) << endl;
 
