@@ -24,5 +24,8 @@ $(MAINEXECUTABLE): $(SOURCES) $(HEADERS)
 valgrind:
 	valgrind --tool=memcheck $(MAINEXECUTABLE)
 
+tidy:
+	clang-tidy $(SOURCES) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=-* --
+
 clean:
 	$(RM) *.exe a.out *.class
