@@ -14,13 +14,14 @@
 using namespace std;
 #include <assert.h>
 
+class A{};
+
 int main(int argc, char **argv) {
     cout << "Complex Demo" << endl;
 
     Complex c1(1,2);
     Complex c2(2,3);
     Complex c3(3,4);
-
 
     cout << endl << "**** DEMONSTRATE THE ARITHMETIC OPERATORS ****" << endl;
 
@@ -63,6 +64,13 @@ int main(int argc, char **argv) {
     if (!c11) {
         cout << "c11 is zero" << endl;
     }
+
+    cout << endl << "**** DEMONSTRATE IMPLICIT CONVERSION ****" << endl;
+    cout << "c1 + 5: " << (c1 + 5) << endl;
+    cout << "c1 - 5: " << (c1 - 5) << endl;
+    // cout << "5 + c1: " << (5 + c1) << endl;
+    cout << "5 - c1: " << (5 - c1) << endl;
+
 
     cout << endl << "**** DEMONSTRATE THE INPUT OPERATOR ****" << endl;
 
