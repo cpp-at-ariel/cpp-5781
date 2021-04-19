@@ -24,7 +24,7 @@ public:
 
 int main() {
   const int dimx = 800, dimy = 800;
-  ofstream imageFile("image_virtual.ppm", ios::out | ios::binary);
+  ofstream imageFile("image3_virtual.ppm", ios::out | ios::binary);
   imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
   RGB* image = new RGB[dimx*dimy];
   for (int j = 0; j < dimy; ++j)  {  // row
@@ -39,9 +39,7 @@ int main() {
   ///
   ///image processing
   ///
-  //imageFile.write(&image, 3*dimx*dimy);         // compile error
   imageFile.write((char*)(image), 3*dimx*dimy);   // logic error
-  //imageFile.write(reinterpret_cast<char*>(&image), 3*dimx*dimy);    // logic error
 
   // How to fix the logic error without removing virtual:
   // for (int j = 0; j < dimy; ++j)  {  // row

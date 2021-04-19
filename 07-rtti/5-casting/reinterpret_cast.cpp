@@ -32,15 +32,15 @@ int main()
 		int* ip = &i;
 		double* dp = (double*)ip;
 		double* ep = reinterpret_cast<double*>(ip);
-		cout << setprecision(100) << *dp << " " << *ep << endl;        // garbage garbage
+		cout << setprecision(100) << *dp << " " << *ep << endl;        // junk junk
 
 		int* jp = reinterpret_cast<int*>(ep);
-		cout << *ip << " " << *jp << endl;        // garbage garbage
+		cout << *ip << " " << *jp << endl;        // junk junk
 
 		// double& dr = d;
 		// int& ir = (int&)d;
 		// int& jr = reinterpret_cast<int&>(d);
-		// cout << ir << " " << jr << endl;        // garbage garbage
+		// cout << ir << " " << jr << endl;        // junk junk
 		// cout << "---" << endl;
 	}
 
@@ -57,21 +57,21 @@ int main()
 		pshape = reinterpret_cast<Shape*>(new Circle);
 		pshape->print();  // OK
 		pshape = reinterpret_cast<Shape*>(new Unrelated);
-		pshape->print();  // garbage
+		pshape->print();  // junk
 
 		cout << "---" << endl;
 
-		pcircle = reinterpret_cast<Circle*>(pshape);  //  same garbage
+		pcircle = reinterpret_cast<Circle*>(pshape);  //  same junk
 		pcircle->print();
-		pcircle = reinterpret_cast<Circle*>(new Shape);  //  555 garbage
+		pcircle = reinterpret_cast<Circle*>(new Shape);  //  555 junk
 		pcircle->print();
-		pcircle = reinterpret_cast<Circle*>(new Unrelated);  // garbage
+		pcircle = reinterpret_cast<Circle*>(new Unrelated);  // junk
 		pcircle->print();
 		cout << "---" << endl;
 
-		punrelated = reinterpret_cast<Unrelated*>(new Shape); // garbage
+		punrelated = reinterpret_cast<Unrelated*>(new Shape); // junk
 		punrelated->print();
-		punrelated = reinterpret_cast<Unrelated*>(new Circle); // garbage
+		punrelated = reinterpret_cast<Unrelated*>(new Circle); // junk
 		punrelated->print();
 	}
 }

@@ -23,7 +23,7 @@ public:
 
 int main() {
   const int dimx = 800, dimy = 800;
-  ofstream imageFile("image_ptr.ppm", ios::out | ios::binary);
+  ofstream imageFile("image2_ptr.ppm", ios::out | ios::binary);
   imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
   RGB* image[dimx*dimy];
   for (int j = 0; j < dimy; ++j)  {  // row
@@ -36,23 +36,9 @@ int main() {
       image[dimx*j+i]->blue = ( (ii*ii+jj*jj) % 256);
     }
   }
-  // image[0].red = 255;
-  // image[0].blue = 0;
-  // image[0].green = 0;
-  ///
-  ///image processing
-  ///
-  cout << image[0] << endl;
+
   // imageFile.write(&image, 3*dimx*dimy);
   imageFile.write((char*)(&image), 3*dimx*dimy);
-  // imageFile.write(reinterpret_cast<char*>(&image), 3*dimx*dimy);
-
-  // for (int j = 0; j < dimy; ++j)  {  // row
-  //   for (int i = 0; i < dimx; ++i) { // column
-  //     imageFile.write((char*)(image[dimx*j+i]), 3);
-  //   }
-  // }
-
   imageFile.close();
 
 

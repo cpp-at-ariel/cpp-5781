@@ -18,7 +18,7 @@ using namespace std;
 int main() {
   const int dimx = 800, dimy = 800;
   for (int offset=0; offset<800; offset+=1) {  
-    ofstream imageFile("/home/erelsgl/Desktop/myimage1.ppm");
+    ofstream imageFile("image.simple.ppm");
     imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
     for (int j = 0; j < dimy; ++j)  {
       for (int i = 0; i < dimx; ++i) {

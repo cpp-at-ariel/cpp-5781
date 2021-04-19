@@ -34,7 +34,7 @@ int main()
 		double* pcircle = &d;
 		int* ip = (int*)pcircle;
 		//int* jp = static_cast<int*>(pcircle); // compiler error: "static_cast from 'double *' to 'int *' is not allowed"
-		cout << *ip << " " << endl;        // garbage
+		cout << *ip << " " << endl;        // junk
 	}
 
 	{
@@ -53,7 +53,7 @@ int main()
 
 		pcircle = static_cast<Circle*>(pshape);  //  OK
 		pcircle->print();
-		pcircle = static_cast<Circle*>(new Shape);  //  Garbage
+		pcircle = static_cast<Circle*>(new Shape);  //  junk
 		pcircle->print();
 		//pcircle = static_cast<Circle*>(new Unrelated);  // compile error
 
