@@ -1,3 +1,8 @@
+/**
+ * Demonstrates the difference between cout and cerr,
+ *   and the bash output redirection methods.
+ */
+
 #include <iostream>
 #include <fstream>
 #include <thread>
@@ -10,6 +15,5 @@ int main() {
 	cout << "The result is 3 " << endl;
 	cerr << "There is a bug " << endl;
 	cout << "The result is 4 " << endl;
-	// ofstream cout2("out2.txt");
 	return 0;
 }
