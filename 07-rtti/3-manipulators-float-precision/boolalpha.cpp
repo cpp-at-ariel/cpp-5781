@@ -14,12 +14,12 @@ using namespace std;
 
 
 int main() {
-    cout << "3 > 2: " << (3 > 2) << endl;
-    cout << "3 < 2: " << (3 < 2) << endl;
-    cout << boolalpha;
-    cout << "3 > 2: " << (3 > 2) << endl;
-    cout << "3 < 2: " << (3 < 2) << endl;
-    cout << noboolalpha;
-    cout << "3 > 2: " << (3 > 2) << endl;
-    cout << "3 < 2: " << (3 < 2) << endl;
+    cout << "3 > 2: " << (3 > 2) << endl
+         << "3 < 2: " << (3 < 2) << endl
+         << boolalpha      // calls boolalpha(cout)
+         << "3 > 2: " << (3 > 2) << endl
+         << "3 < 2: " << (3 < 2) << endl
+         << noboolalpha
+         << "3 > 2: " << (3 > 2) << endl
+         << "3 < 2: " << (3 < 2) << endl;
 }

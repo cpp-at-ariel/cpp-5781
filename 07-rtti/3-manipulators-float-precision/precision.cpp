@@ -33,13 +33,6 @@ void printlargenums() {
 
 
 int main() {
-    // double huge1 = 1e302;
-    // double huge2 = huge1 + 99999999999999;
-    // cout << huge2-huge1 << endl;
-
-    // cout << true << boolalpha << " " << true << endl;
-
-
     cout << 1234.5678 << endl;
     cout << 12345678. << endl;
 
@@ -50,11 +43,17 @@ int main() {
     cout << setprecision(100)
          << 1234.5678 << endl
          << 12345678. << endl;
-        
-    cout << "default: " << endl; 
-    printsmallnums(); printlargenums(); printxyz();
-    for (int i=0; i<10; ++i) {
-        cout << "precision(" << i << "): " << endl << setprecision(i); 
-        printsmallnums(); printlargenums(); printxyz();
-    }
+
+    ostringstream os;
+    os << setprecision(4) <<  1234.5678;
+    cout << os.str() << endl;
+    // Now, in your doctests, you can do:
+    //      CHECK_EQ(os.str(),"1235");
+    
+    // cout << "default: " << endl; 
+    // printsmallnums(); printlargenums(); printxyz();
+    // for (int i=0; i<10; ++i) {
+    //     cout << "precision(" << i << "): " << endl << setprecision(i); 
+    //     printsmallnums(); printlargenums(); printxyz();
+    // }
 }
