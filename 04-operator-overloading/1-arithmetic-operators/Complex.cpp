@@ -39,13 +39,13 @@ const float TOLERANCE = 0.001;
 bool operator==(const Complex& c1, const Complex& c2) {
     // this implementation can cause problems with
     // double precision (== for doubles)
-    return ((c1._re==c2._re)&&(c1._im==c2._im));
+    // return ((c1._re==c2._re)&&(c1._im==c2._im));
+    return ( abs(c1._re-c2._re)<=TOLERANCE && abs(c1._im-c2._im)<=TOLERANCE );
 }
 
 bool operator!=(const Complex& c1, const Complex& c2) {
     // return ( (c1._re!=c2._re) || (c1._im!=c2._im) );
     return (!(c1==c2));
-    // return ( abs(c1._re-c2._re)>TOLERANCE || abs(c1._im-c2._im)>TOLERANCE );
 }
 
 
