@@ -23,25 +23,28 @@ public:
 
 int main() {
   const int dimx = 800, dimy = 800;
-  ofstream imageFile("image1_struct.ppm", ios::out | ios::binary);
-  imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
-  RGB image[dimx*dimy];
+  const int max_color = 256;
+  RGB* image = new RGB[dimx*dimy];
+  // RGB image[dimx*dimy]; // works as well
   for (int j = 0; j < dimy; ++j)  {  // row
     for (int i = 0; i < dimx; ++i) { // column
-      int ii = (i*256/800);
-      int jj = (j*256/800);
+      int ii = (i*max_color/dimx);  // normalize i to the range [0, max_color]
+      int jj = (j*max_color/dimy);
       image[dimx*j+i].red = ii% (256);
       image[dimx*j+i].green = jj % (256);
       image[dimx*j+i].blue = ( (ii*ii+jj*jj) % 256);
     }
   }
   ///
-  ///image processing
+  ///Writing the image
   ///
 
-  //imageFile.write(&image, 3*dimx*dimy);         // compile error
-  imageFile.write((char*)(&image), 3*dimx*dimy);   // fine
-  // imageFile.write(reinterpret_cast<char*>(&image), 3*dimx*dimy);  // fine
+  ofstream imageFile("image1_struct.ppm", ios::out | ios::binary);
+  imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
+
+  //imageFile.write(image, 3*dimx*dimy);         // compile error
+  imageFile.write((char*)(image), 3*dimx*dimy);   // fine
+  // imageFile.write(reinterpret_cast<char*>(image), 3*dimx*dimy);  // fine
   imageFile.close();
   return 0;
 }
