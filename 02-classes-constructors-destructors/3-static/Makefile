@@ -13,7 +13,7 @@ endif
 
 MAINEXECUTABLE=$(subst .cpp,,$(MAIN)).exe
 
-SOURCES=$(MAIN)
+SOURCES=$(MAIN) points.index.cpp
 
 all: $(MAINEXECUTABLE)
 	$(MAINEXECUTABLE)
