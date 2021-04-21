@@ -15,6 +15,23 @@ void printxyz() {
     cout << x << " " << y << " " << z << endl;
 }
 
+void printsmallnums() {
+    cout << "  ";
+    for(float value = -0.6; value <= 0.6; value += 0.2)
+        cout << value << " ";
+    cout << endl;
+}
+
+
+void printlargenums() {
+    cout << "  ";
+    for(float value = -666.0; value <= 666.0; value += 222.0)
+        cout << value << " ";
+    cout << endl;
+}
+
+
+
 int main() {
     printf("%.3f\n",1234.5678);
     
@@ -34,4 +51,11 @@ int main() {
     cout << os.str() << endl;
     // Now, in your doctests, you can do:
     //      CHECK_EQ(os.str(),"1235");
+    
+    cout << "default: " << endl; 
+    printsmallnums(); printlargenums(); printxyz();
+    for (int i=0; i<10; ++i) {
+        cout << "precision(" << i << "): " << endl << setprecision(i); 
+        printsmallnums(); printlargenums(); printxyz();
+    }
 }

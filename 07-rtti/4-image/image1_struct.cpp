@@ -22,7 +22,7 @@ public:
 
 
 int main() {
-  const int dimx = 800, dimy = 800;
+  const int dimx = 3200, dimy = 3200;
   const int max_color = 256;
   RGB* image = new RGB[dimx*dimy];
   // RGB image[dimx*dimy]; // works as well
@@ -30,9 +30,9 @@ int main() {
     for (int i = 0; i < dimx; ++i) { // column
       int ii = (i*max_color/dimx);  // normalize i to the range [0, max_color]
       int jj = (j*max_color/dimy);
-      image[dimx*j+i].red = ii% (256);
-      image[dimx*j+i].green = jj % (256);
-      image[dimx*j+i].blue = ( (ii*ii+jj*jj) % 256);
+      image[dimx*j+i].green = ii % (max_color);
+      image[dimx*j+i].red = jj % (max_color);
+      image[dimx*j+i].blue = ( (ii*ii+jj*jj) % max_color);
     }
   }
   ///

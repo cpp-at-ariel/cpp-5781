@@ -32,16 +32,13 @@ int main()
 		int* ip = &i;
 		double* dp = (double*)ip;
 		double* ep = reinterpret_cast<double*>(ip);
-		cout << setprecision(100) << *dp << " " << *ep << endl;        // junk junk
+		cout << "i interpreted as a double: " << setprecision(100) << *dp << " " << *ep << endl;        // junk junk
 
-		int* jp = reinterpret_cast<int*>(ep);
-		cout << *ip << " " << *jp << endl;        // junk junk
-
-		// double& dr = d;
-		// int& ir = (int&)d;
-		// int& jr = reinterpret_cast<int&>(d);
-		// cout << ir << " " << jr << endl;        // junk junk
-		// cout << "---" << endl;
+		double d = 5.555;
+		int& ir = (int&)d;
+		int& jr = reinterpret_cast<int&>(d);
+		cout << "d interpreted as an int: " << ir << " " << jr << endl;        // junk junk
+		cout << "---" << endl;
 	}
 
 	{

@@ -8,23 +8,25 @@ struct Shape {
 	void print() { cout << i << endl; }
 };
 
-struct Circle: public Shape {
-	float f=56.78;
-	void print() { cout << i << " " << f << endl; }
-};
-
 struct Unrelated {
 	double d=666.0;
 	void print() { cout << d << endl; }
 };
+
+struct Circle: public Shape {
+	float f=56.78;
+	void print() { cout << i << " " << f << endl; }
+	// operator Unrelated() { return Unrelated{}; }
+};
+
 
 
 int main()
 {	
 	{
 		double d=12.45;
-		int i = (int)d;
-		int j = static_cast<int>(d);
+		int i = (int)d;               // C-style
+		int j = static_cast<int>(d);  // C++-style
 		cout << i << " " << j << endl;
 
 		double e = (double)i;
@@ -40,8 +42,9 @@ int main()
 	{
 		Shape shape1;
 		Circle circle1;
-		//circle1 = static_cast<Circle>(shape1); // compile error
-		shape1 = static_cast<Shape>(circle1); // OK
+		// circle1 = static_cast<Circle>(shape1); // compile error
+		// Unrelated u = static_cast<Unrelated>(circle1); // compile error
+		shape1 = static_cast<Shape>(circle1); // OK - slicing
 
 		Shape* pshape;
 		Circle* pcircle;

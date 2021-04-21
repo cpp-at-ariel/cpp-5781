@@ -1,5 +1,6 @@
 /**
- * Demonstrates the difference between cout and cerr,
+ * Demonstrates the differences between cout and cerr,
+ *   the output buffering,
  *   and the bash output redirection methods.
  */
 
@@ -10,18 +11,21 @@
 
 using namespace std;
 
-const int WAIT_TIME=0;
+const int WAIT_TIME=3;
 
 int main() {
 	cout << "Start " << endl;
 	cout << "The result is 2 ";
-	// this_thread::sleep_for(chrono::seconds(WAIT_TIME));
+	this_thread::sleep_for(chrono::seconds(WAIT_TIME));
 	cout << endl;
-	// this_thread::sleep_for(chrono::seconds(WAIT_TIME));
+	// cout.flush();
+	this_thread::sleep_for(chrono::seconds(WAIT_TIME));
 	cout << "The result is 3 " << endl;
+	
 	cerr << "There is a bug ";
 	this_thread::sleep_for(chrono::seconds(WAIT_TIME));
 	cerr << endl;
+	// this_thread::sleep_for(chrono::seconds(WAIT_TIME));
 	cout << "The result is 4 " << endl;
 	return 0;
 }

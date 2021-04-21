@@ -63,7 +63,7 @@ int main()
 
 		cout << "bp1 = " << bp1 << endl;
 		bp1->print();
-		//dp1 = dynamic_cast<Circle1*>(new Shape1);    // compile error: 'Shape1' is not polymorphic
+		// dp1 = dynamic_cast<Circle1*>(new Shape1);    // compile error: 'Shape1' is not polymorphic
 		//cout << "dp1 = " << dp1 << endl;
 		//dp1->print();
 
