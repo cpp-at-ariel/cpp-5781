@@ -9,20 +9,17 @@ using namespace std;
 int main() {
 	/*** A stack of strings ***/
 
-	string str1("Hello ");
-	string str2("world !\n");
-
 	Stk<string>  strStk;
-	strStk.push(str2);
-	strStk.push(str1);
+	strStk.push(string("world !\n"));
+	strStk.push(string("Hello "));
 
 	while(!strStk.isEmpty()) {
 		cout << strStk.top();
 		strStk.pop();
 	}
 	
-	strStk.push(str2);
-	strStk.push(str1);
+	strStk.push(string("world !\n"));
+	strStk.push(string("Hello "));
 	// Old C++ style
 	for (
 		auto it = strStk.begin(); 
@@ -31,7 +28,7 @@ int main() {
 		)
 	{
 		const string& val = *it;
-		*it = "Life\n";
+		// *it = "Life\n";
 		cout << it->size() << " ";
 		cout << *it;
 	}
@@ -45,35 +42,26 @@ int main() {
 	/*** A stack of ints ***/
 
 	int arr[]= {43, 21, -22};
+
 	// Calling templated ctor, old C++ style
 	Stk<int> intStk(arr, arr+3);
-
-
-	//string sarr[]= {};
-	// Calling templated ctor, old C++ style
-	//Stk<int> intStkS(sarr, sarr+3);
-
-
-	// Calling templated ctor, C++-11 style
-	Stk<int> intStk2(begin(arr), end(arr));
 	for (const auto& val: intStk) {
 		cout << val << " ";
 	}
 	cout << endl;
+
+	// Calling templated ctor, C++-11 style
+	Stk<int> intStk2(begin(arr), end(arr));
 	for (const auto& val: intStk2) {
-		//cout << typeid(val).name();
 		cout << val << " ";
 	}
 	cout << endl;
 
-	Stk<int> intStk3 (intStk.begin(), intStk.end());
-
-	// Remark: C++-11 allows also to write classes that have {} constructors:
-	// Stk<int> intStk3{43, 21, -22};
-
-	//cout << intStk2.top() << endl;
-	//intStk2.top() = 100000;
-	//cout << intStk2.top() << endl;
+	Stk<int> intStk3 (begin(intStk), end(intStk));
+	for (const auto& val: intStk3) {
+		cout << val << " ";
+	}
+	cout << endl;
 	
 	return 0;
 }

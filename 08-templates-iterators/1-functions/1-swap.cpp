@@ -1,5 +1,9 @@
 /**
- * Function template example: swap
+ * Function template example: swap. 
+ * 
+ * Also illustrates errors when:
+ * - The argument types do not match.
+ * - There is no copy ctor.
  * 
  * @author Erel Segal-Halevi
  * @since 2018-04
@@ -52,6 +56,6 @@ int main() {
 	}
 
 	{   // try to swap ostream:
-		// swap(cout, cerr);     // compile error
+		swap(cout, cerr);     // compile error
 	}
 }

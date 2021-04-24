@@ -1,5 +1,5 @@
 /**
- * Variable template example
+ * Variable template example: pi.
  * 
  * @author Erel Segal-Halevi
  * @since 2018-04

@@ -1,5 +1,8 @@
 /**
- * Function template example
+ * Function template example: sum. 
+ * 
+ * Also illustrates errors in the template definition, 
+ *      that are revealed only in the instantiation.
  * 
  * @author Erel Segal-Halevi
  * @since 2018-04

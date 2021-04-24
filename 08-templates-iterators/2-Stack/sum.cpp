@@ -1,6 +1,14 @@
+/**
+ * Illustrates how to call a sum function with iterators.
+ * 
+ * Author: Erel Segal-Halevi
+ * Since: 2020-04
+ */
+
+
 #include <iostream>
 using namespace std;
-#include "sum.hpp"
+#include "sum.hpp"    // Writing this file is left as an exercise :-)
 
 struct MyClass {
 	MyClass& operator+=(const MyClass& other) {
