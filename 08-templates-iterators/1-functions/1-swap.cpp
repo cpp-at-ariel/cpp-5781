@@ -11,7 +11,9 @@
 
 #include <iostream>
 #include <map>
-using std::cout, std::cerr, std::endl;
+using std::cout;
+using std::cerr;
+using std::endl;
 // Don't use namespace std, since it brings std::swap!
 
 
