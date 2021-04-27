@@ -31,7 +31,6 @@ void swap (double& a, double& b) {
 	a = a - b;
 }
 
-
 int main() {
 	{   // swap ints:
 		cout << endl;
@@ -55,9 +54,10 @@ int main() {
 		double a=4.1; int b=5;
 		cout << a << " " << b << endl;
 		// swap(a,b);  // compile error
+		cout << a << " " << b << endl;
 	}
 
 	{   // try to swap ostream:
-		swap(cout, cerr);     // compile error
+		// swap(cout, cerr);     // compile error
 	}
 }

@@ -12,6 +12,7 @@
 #include <vector>
 using namespace std;
 
+
 template<typename T>
 T sum (T a, T b) {
 	// f(a);  // compile error
@@ -27,6 +28,10 @@ T sumv (const vector<T>& v, T start=T{}) {
 	return result;
 }
 
+// int g(int a) {
+// 	f(a);  // compile error
+// }
+
 
 int main() {
 	cout << sum(5,6) << endl;
@@ -37,6 +42,6 @@ int main() {
 	cout << sumv(vector<int>{1,2,3,4,5},0) << endl;
 	cout << sumv(vector<string>{"aaa","bbb","ccc","ddd","eee"}) << endl;
 
-	// With your NumberWithUnits class, you could also do:
-	// cout << sumv(vector<NumberWithUnits>{...}, string()) << endl;
+	// // With your NumberWithUnits class, you could also do:
+	// cout << sumv(vector<NumberWithUnits>{...}) << endl;
 }
