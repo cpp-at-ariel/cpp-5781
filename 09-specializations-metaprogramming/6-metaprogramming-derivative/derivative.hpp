@@ -48,7 +48,6 @@ template <unsigned N, typename Functor> class nth_derivative {
 
 
 template <typename Functor> class nth_derivative<1, Functor>: public derivative<Functor> {
-  //using derivative<Function>::derivative;  // use the base-class constructor. We could also  use:
   public:
      nth_derivative(const Functor& f, const  double& h) : derivative<Functor>(f, h) {}
 };

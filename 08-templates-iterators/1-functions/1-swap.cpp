@@ -58,6 +58,6 @@ int main() {
 	}
 
 	{   // try to swap ostream:
-		// swap(cout, cerr);     // compile error
+		swap(cout, cerr);     // compile error
 	}
 }

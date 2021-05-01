@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-template <class T> class Test {  
+template <class T> class Test {
 public:
 	Test()   {     cout << "General template object " << typeid(T).name() << "\n";  }  
 };

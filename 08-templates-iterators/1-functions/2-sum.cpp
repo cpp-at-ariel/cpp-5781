@@ -37,7 +37,7 @@ int main() {
 	cout << sum(5,6) << endl;
 	cout << sum(5.0,6.2)  << endl;
 	cout << sum(string("abc"),string("def")) << endl;
-	// cout << sum("abc" , "def") << endl;  // compile error
+	cout << sum("abc" , "def") << endl;  // compile error
 
 	cout << sumv(vector<int>{1,2,3,4,5},0) << endl;
 	cout << sumv(vector<string>{"aaa","bbb","ccc","ddd","eee"}) << endl;

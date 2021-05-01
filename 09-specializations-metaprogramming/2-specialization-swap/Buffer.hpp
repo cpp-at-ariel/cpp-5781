@@ -16,21 +16,13 @@ void myswap(Data& a, Data& b) {
 	b= tmp;
 }
 
-Buffer<double> buffer1(1,000,000);
-Buffer<double> buffer2(1,000,000);
-myswap(buffer1, buffer2);
-
 
 template<typename T>
 class Buffer {
-
 private:
 	T* _buf;
 	size_t _size;
 
-	//---------------------------------------------------------
-	// private helpers
-	//---------------------------------------------------------
 	void copyVals(const Buffer& other) {
 		for (size_t i= 0; i<other.size(); ++i) {
 			(*this)[i]= other[i];
@@ -44,7 +36,6 @@ private:
 	static T* getMemory(size_t size) {
 		return new T[size];
 	}
-	//---------------------------------------------------------
 	
 public:
 
@@ -76,7 +67,7 @@ public:
 		return *this;
 	}
 
-	//---------------------------------------------------------
+
 
 	//---------------------------------------------------------
 	// Accessors
@@ -90,7 +81,7 @@ public:
 		assert(i<size());
 		return _buf[i];
 	}
-	//---------------------------------------------------------
+
 
 	//---------------------------------------------------------
 	// Iterators related (not safe - for safe we need inner classes instead of typedefs)
@@ -111,8 +102,6 @@ public:
 	const_iterator cend() const {
 		return _buf+_size;
 	}
-	//---------------------------------------------------------
-
 
 
 	//---------------------------------------------------------
@@ -132,6 +121,6 @@ void myswap(Buffer<T>& b1, Buffer<T>& b2) {
 	std::cout << "Special swap" << std::endl;
 	b1.efficient_swap(b2);
 }
-//---------------------------------------------------------
+
 
 

@@ -12,7 +12,9 @@ struct pair {
 };
 
 pair<int,char> func() {
-	return {2,'c'};
+	return {2,'c'};   
+	// equivalent to:
+	// return pair<int,char>{2,'c'};
 }
 
 template <typename T1, typename T2> 

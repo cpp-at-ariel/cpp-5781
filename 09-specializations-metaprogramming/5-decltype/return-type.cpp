@@ -19,8 +19,8 @@ template <> struct ReturnType<int> {
 };
 
 template <class T>
-decltype(ReturnType<T>::returned_value) divide(T number) {
-	decltype(ReturnType<T>::returned_value) result = number/10.0;
+decltype(ReturnType<T>::returned_value) div10(T number) {
+	decltype(ReturnType<T>::returned_value) result = number / 10.0;
   return result;
 }
 
@@ -32,10 +32,9 @@ int main() {
   decltype(ReturnType<char*>::returned_value) cc;
 
   cout << setprecision(100);
-	cout << divide(short{36}) << endl;
-	cout << divide(int{36}) << endl;
-	cout << divide(float{36}) << endl;
-	cout << divide(double{36}) << endl;
-	// cout << divide("a") << endl;
-
+	cout << "short: " << div10(short{36}) << endl;
+	cout << "int: " << div10(int{36}) << endl;
+	cout << "float: " << div10(float{36}) << endl;
+	cout << "double: " << div10(double{36}) << endl;
+	// cout << "char*: " << div10("a") << endl;
 }

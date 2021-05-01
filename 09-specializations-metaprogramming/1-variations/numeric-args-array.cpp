@@ -33,8 +33,7 @@ ostream& operator<< (ostream& out, const array<T,n,defval>& thearray) {
 
 
 int main() {
-	const int j = 7;
-	array<int,j,55> array5;
+	array<int,5,55> array5;
 	cout << array5 << endl;
 	array5[0] = 99999;
 	cout << array5 << endl;
@@ -45,17 +44,4 @@ int main() {
 	array3[0] = 99999;
 	cout << array3 << endl;
 	cout << "size of array3 = " << array3.size << endl << endl;
-
-	const int i=7;
-	array<int,i,77> array7;
-
-	array7[0] = 99999;
-	cout << array7 << endl;
-	cout << "size of array7 = " << array7.size << endl << endl;
-
-	// const char* abc="abc";
-	// array<char*,6, abc> array6;
-	// cout << "size of array6 = " << array6.size << endl << endl;
-	// cout << array6 << endl;
-	// cout << "size of array6 = " << array6.size << endl << endl;
 }

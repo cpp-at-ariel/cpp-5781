@@ -28,17 +28,6 @@ class vector {
     vector(): my_size(0), data(nullptr) {}
     ~vector() {delete[] data;}
 
-    vector(const vector& that): 
-      my_size(that.my_size), data(new T[my_size])  {
-    	  std::copy(&that.data[0], &that.data[that.my_size], &data[0]);
-    }
-
-    vector& operator=(const vector& that) {
-      assert(my_size == that.my_size);
-      std::copy(&that.data[0], &that.data[that.my_size], &data[0]);
-      return *this;
-    }
-
     int size() const { return my_size; }
 
     const T& operator[](int i) const {
@@ -49,14 +38,6 @@ class vector {
     T& operator[](int i) {
         check_index(i);
         return data[i];
-    }
-
-    vector operator+(const vector& that) const {
-        assert(my_size == that.my_size);
-        vector sum(my_size);
-        for (int i= 0; i < my_size; ++i) 
-            sum[i] = data[i] + that[i];
-        return sum;
     }
 };
 
@@ -97,8 +78,8 @@ class bool_reference {
       // bit_index = 2
       // mask          = 0b00000100
       // byte & mask   = 0b00000?00
-      // (bit=false: byte&mask = 0)
-      // (bit=true: byte&mask != 0)
+      // (bit=false: byte&mask == 0)
+      // (bit=true: byte&mask  != 0)
     }
 
     bool_reference& operator=(bool b) { 
@@ -188,27 +169,11 @@ class vector<bool> {
 };
 
 
-/* Example to understand the compiler error: */
-// int& f() {
-//   return 3+4;
-// }
-
-
 
 int main() {
     vector<float> v( 4 );
     v[0]= v[1]= 1.0; v[2]= 2.0; v[3] = -3.0;
-
     std::cout << "v = " << v << std::endl;
-
-    vector<float> w(v.size());
-    w = v;
-
-    vector<float> sum( w + v );
-    std::cout << "w + v = " << sum << std::endl;
-
-    vector<float> z( v );
-
 
     vector<bool>  b(13);
     b[10] = true;  // equivalent to:
@@ -221,9 +186,6 @@ int main() {
     for (int i= 0; i < 13; i++)
 		  b[i] = i % 3;
     std::cout << "b = " << b << std::endl;
-    for (int i= 0; i < 13; i++)
-		  std::cout << b[i];
-    std::cout << '\n';
 
     return 0;
 }
