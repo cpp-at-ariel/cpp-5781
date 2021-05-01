@@ -5,7 +5,7 @@ using std::endl;
 using std::ostream;
 using std::string;
 
-template <typename T, int n=5, T defval=T()> class array {
+template <typename T, int n, T defval> class array {
 	T vals[n];
 public:
 	array() { 
@@ -33,9 +33,15 @@ ostream& operator<< (ostream& out, const array<T,n,defval>& thearray) {
 
 
 int main() {
-	array<int> array5;  // equivalent to array<int,5,int()>
+	array<int,5,55> array5;
 	cout << array5 << endl;
 	array5[0] = 99999;
 	cout << array5 << endl;
 	cout << "size of array5 = " << array5.size << endl << endl;
+
+	array<int,3,33> array3;  // a different class!
+	cout << array3 << endl;  // a different operator<<!
+	array3[0] = 99999;
+	cout << array3 << endl;
+	cout << "size of array3 = " << array3.size << endl << endl;
 }
