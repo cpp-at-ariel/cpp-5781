@@ -11,8 +11,10 @@ using namespace std;
 
 
 template<typename T> const bool is_numeric = false;
-template<> const bool is_numeric<int> = true;
-template<> const bool is_numeric<double> = true;
+template<>           const bool is_numeric<int>    = true;
+template<>           const bool is_numeric<long>   = true;
+template<>           const bool is_numeric<float>  = true;
+template<>           const bool is_numeric<double> = true;
 
 
 template<typename T> T divide(T a, T b) {
@@ -35,5 +37,5 @@ int main() {
 	// cout << divide(f,0.0) << endl;
 
 	cout << is_numeric<char> << endl;
-    // cout << divide('a','b') << endl;
+    cout << divide('a','b') << endl;
 }

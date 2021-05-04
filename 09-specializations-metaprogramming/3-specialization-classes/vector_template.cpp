@@ -104,7 +104,7 @@ class vector<bool> {
 
     vector(): my_size(0), data(nullptr) {}
   
-    bool operator[](int i) const { 
+    bool operator[](int i) const {
       check_index(i);
       return (data[i/8] >> i%8) & 1;
     }
@@ -168,8 +168,6 @@ class vector<bool> {
     // in each specialization!
 };
 
-
-
 int main() {
     vector<float> v( 4 );
     v[0]= v[1]= 1.0; v[2]= 2.0; v[3] = -3.0;
@@ -183,6 +181,7 @@ int main() {
     // bool_reference br = b.operator[](10)
     // b10 = br.operator bool();
 
+    std::cout << std::boolalpha;
     for (int i= 0; i < 13; i++)
 		  b[i] = i % 3;
     std::cout << "b = " << b << std::endl;

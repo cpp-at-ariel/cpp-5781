@@ -47,7 +47,8 @@ template <unsigned N, typename Functor> class nth_derivative {
 
 
 
-template <typename Functor> class nth_derivative<1, Functor>: public derivative<Functor> {
+template <typename Functor> 
+class nth_derivative<1, Functor>: public derivative<Functor> {
   public:
      nth_derivative(const Functor& f, const  double& h) : derivative<Functor>(f, h) {}
 };

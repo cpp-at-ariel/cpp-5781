@@ -8,7 +8,7 @@ using std::string;
 template <typename T, int n, T defval> class array {
 	T vals[n];
 public:
-	array() { 
+	array() {
 		for (int i=0; i<n; i++)
 			vals[i]=defval;
 	}

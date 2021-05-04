@@ -38,4 +38,7 @@ int main() {
 	array5[0] = 99999;
 	cout << array5 << endl;
 	cout << "size of array5 = " << array5.size << endl << endl;
+
+	array<int,7> array7;  // equivalent to array<int,7,int()>
+	cout << array7 << endl;
 }
