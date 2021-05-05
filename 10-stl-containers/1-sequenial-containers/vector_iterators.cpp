@@ -1,5 +1,5 @@
 /**
- * Demonstrates the difference between push_back and emplace
+ * Demonstrates the vector iterators
  * 
  * @author Erel Segal-Halevi
  * @since 2019-05

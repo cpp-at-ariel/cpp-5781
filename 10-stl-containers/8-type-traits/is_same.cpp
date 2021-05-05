@@ -14,14 +14,14 @@ int main() {
 	cout << "is_same" << endl;
 	cout << is_same_v<char,int> << endl;    // false
 	cout << is_same_v<char,char> << endl;   // true
-	cout << is_same_v<char,char&> << endl;   // true
+	cout << is_same_v<char,char&> << endl;   // false
 	cout << is_same_v<char,const char> << endl;  // false
 	cout << is_same_v<char,const char&> << endl; // false
 
 	cout << "is_almost_same" << endl;
 	cout << is_almost_same_v<char,int> << endl;    // false
 	cout << is_almost_same_v<char,char> << endl;   // true
-	cout << is_almost_same_v<char,char&> << endl;   // false!!
+	cout << is_almost_same_v<char,char&> << endl;   // false
 	cout << is_almost_same_v<char,const char> << endl;  // true
 	cout << is_almost_same_v<char,const char&> << endl; // true
 }

@@ -1,5 +1,5 @@
 /**
- * Demonstrates iteration on stl maps
+ * Demonstrates iteration on stl sets
  * 
  * @author Erel Segal-Halevi
  * @since 2018-05

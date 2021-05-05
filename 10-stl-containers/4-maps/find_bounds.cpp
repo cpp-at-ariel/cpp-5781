@@ -32,7 +32,6 @@ int main() {
 
 	auto end_abc = m.upper_bound("abc");
 	cout << "upper_bound: " << end_abc->first << "," << end_abc->second << endl;
-	
 
 	cout << endl << "all abc in multimap: " << endl;
 	for (auto i=begin_abc; i!=end_abc; ++i) 

@@ -27,13 +27,5 @@ int main() {
 	cout << "m1[abc]=" << m1["abc"] << endl;
 
 	// cout << m1.at("xyz") << endl;  // throws exception
-
-	for(auto pair1: m1) {
-		cout << pair1.first << ':' << pair1.second << endl;
-	}
-
-	for(auto [key,val] : m1) {
-		cout << key << ':' << val << endl;
-	}
-
+	// cout << m1["xyz"] << endl;  
 }

@@ -30,16 +30,12 @@ struct SederYored {
  */
 struct ZugiIzugi {
 	bool operator()(int x, int y) const {
-		if ( (x%2 == y%2) )
-			return x<y;
 		if (x%2==0 && y%2!=0)
 			return true;
-		else // if (x%2!=0 && y%2==0)
+		if (x%2!=0 && y%2==0)
 			return false;
-	}
-
-	string operator()(int x) const {
-		return "abc";
+		else //  (x%2 == y%2)
+			return x<y;
 	}
 };
 
@@ -56,9 +52,6 @@ struct UserDefinedOrder {
 struct dummy{};
 
 int main() {
-	// set<dummy> sv;
-	// sv.insert(dummy{});
-
 	// Demonstrate two kinds of comparison functors:
 	SederYored compare;
 	cout << boolalpha << compare(5,4) << endl;
@@ -66,19 +59,16 @@ int main() {
 	auto seder_yored = [] (int a, int b) {return a>b;};
 	cout << seder_yored(5,4)  << endl;
 
-	// int i;
-	// i(5,4);
 
 	// Demonstrate using comparison functors in sets:
-	//set<int> s1;
-	// cout << s1 << endl;    // long compiler error
-	//set<int,SederYored> s1;
-	set<int,decltype(seder_yored)> s1 (seder_yored);
+	set<int> s1;
+	// set<int,SederYored> s1;
+	// set<int,decltype(seder_yored)> s1 (seder_yored);
 
 	// set<int, less<int> > s1;  // default
 	// set<int, greater<> > s1;
 	// set<int,ZugiIzugi> s1 {1,2,4,6};
-	// bool user_chose_seder_yored = true;
+	// bool user_chose_seder_yored = false;
 	// set<int, UserDefinedOrder> s1 (user_chose_seder_yored);
 
 	s1.emplace(5);

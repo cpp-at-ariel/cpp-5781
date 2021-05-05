@@ -54,4 +54,7 @@ int main() {
 	cout << "shrink_to_fit: " << endl;
 	v1.shrink_to_fit();
 	cout << "size=" << v1.size() << " capacity=" << v1.capacity() << endl;
+
+	v1.emplace_back(10);
+	cout << "size=" << v1.size() << " capacity=" << v1.capacity() << endl;
 }
