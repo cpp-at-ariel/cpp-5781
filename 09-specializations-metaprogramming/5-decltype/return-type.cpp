@@ -25,7 +25,6 @@ decltype(ReturnType<T>::returned_value) div10(T number) {
 }
 
 
-
 int main() {
   decltype(ReturnType<short>::returned_value) aa;
   decltype(ReturnType<int>::returned_value) bb;

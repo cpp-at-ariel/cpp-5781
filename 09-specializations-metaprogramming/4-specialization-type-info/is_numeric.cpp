@@ -37,5 +37,5 @@ int main() {
 	// cout << divide(f,0.0) << endl;
 
 	cout << is_numeric<char> << endl;
-    cout << divide('a','b') << endl;
+    // cout << divide('a','b') << endl;
 }
