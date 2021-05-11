@@ -43,12 +43,15 @@ auto f_automatic_bug() {        // Python style (does not work)
 
 int main() {
 	auto p = pair{6,'b'};
+	cout << p.first << " " << p.second << endl;
 	auto [p0,p1]  = p;
 
 	auto t = tuple{5,'a', 6.7};  // equivalent to:
 	// tuple<int,char,double> t = tuple(5,'a', 6.7);
 	cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << endl;
 	auto [t0,t1,t2] = t;
+	get<0>(t) = 99;
+	cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << endl;
 
 	auto [x0,x1,_] = t;
 

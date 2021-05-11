@@ -13,7 +13,7 @@ struct MyClass {
 	int a,b;
 	MyClass(int a) { cout << "ctor("<<a<<")"<<endl; this->a=a; this->b=-1; }
 	MyClass(int a,int b) { cout << "ctor("<<a<<","<<b<<")"<<endl; this->a=a; this->b=b; }
-	MyClass(const MyClass& other) { cout << "copy-ctor"<<endl; a=other.a; b=other.b; }
+	MyClass(const MyClass& other) { cout << "copy-ctor("<<other.a << "," << other.b << ")"<<endl; a=other.a; b=other.b; }
 	MyClass& operator=(const MyClass& other) { cout << "operator="<<endl; a=other.a; b=other.b; return *this;}
 	~MyClass() { cout << "dtor(" << a << "," << b << ")"<<endl; }
 };
@@ -27,15 +27,13 @@ int main() {
 	cout << "push_back" << endl;
 	MyClass aa(2);
 	v1.push_back(aa);
-	v1.push_back(MyClass(2,4));
+	v1.push_back(MyClass(22,44));
 	cout << "size=" << v1.size() << " capacity=" << v1.capacity() << endl;
 	cout << "emplace_back" << endl;
 	v1.emplace_back(3);
-	v1.emplace_back(3,5);
+	v1.emplace_back(33,55);
 	cout << "size=" << v1.size() << " capacity=" << v1.capacity() << endl;
 
-	// cout << "push_back above capacity: " << endl;
-	// v1.push_back(9);
 	cout << "emplace_back above capacity: " << endl;
 	v1.emplace_back(9);
 	cout << "size=" << v1.size() << " capacity=" << v1.capacity() << endl << endl;
@@ -44,12 +42,7 @@ int main() {
 
 	auto v1iter = v1.begin();
 	v1iter++;
-	*v1iter = MyClass{8,9};
-
-	// const vector<MyClass> v2;
-	// auto v2iter = v2.begin();
-	// // *v2iter = MyClass{8,9};
-
+	*v1iter = MyClass{88,99};
 
 	cout << "shrink_to_fit: " << endl;
 	v1.shrink_to_fit();

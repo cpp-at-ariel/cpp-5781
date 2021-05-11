@@ -23,7 +23,7 @@ int main() {
 	cout << endl;
 
 	// C++11 version:
-	for (auto pair: m) 
+	for (const auto& pair: m) 
 		cout << pair.first << "," << pair.second << endl;	
 	cout << endl;
 

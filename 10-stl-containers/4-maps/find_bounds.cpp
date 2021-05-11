@@ -26,6 +26,7 @@ int main() {
 
 	auto iter = m.find("abc");
 	cout <<  "find: " << iter->first << "," << iter->second << endl;
+	cout <<  "count: " << m.count("abc") << endl;
 
 	auto begin_abc = m.lower_bound("abc");
 	cout << "lower_bound: " << begin_abc->first << "," << begin_abc->second << endl;

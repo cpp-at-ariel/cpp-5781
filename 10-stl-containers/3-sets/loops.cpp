@@ -18,13 +18,13 @@ int main() {
 	m.insert("ghi");
 
 	// Old version:
-	for (set<string>::iterator iter = m.begin(); iter!=m.end(); ++iter) 
+	for (set<string>::iterator iter = m.begin(); iter!=m.end(); ++iter)
 		cout << *iter << endl;	
 	cout << endl;
 
-	// // C++11 version:
-	for (auto val: m) 
-		cout << val << endl;	
+	// C++11 version:
+	for (const auto& val: m)
+		cout << val << endl;
 	cout << endl;
 
 }

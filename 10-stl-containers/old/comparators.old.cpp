@@ -40,16 +40,24 @@ struct ZugiIzugi {
 };
 
 
+bool yored;
+
 struct UserDefinedOrder {
-	bool yored;
-	UserDefinedOrder(bool yored) { this->yored = yored; }
+	UserDefinedOrder() {  }
 	bool operator()(int x, int y) const {
 		return yored? x>y: x<y;
 	}
 };
 
+bool user_defined_order(int x, int y) {
+	return yored? x>y: x<y;
+}
 
-struct dummy{};
+
+struct dummy{
+	// bool operator<(dummy x, dummy y) {return ...}
+};
+
 
 int main() {
 	// Demonstrate two kinds of comparison functors:
@@ -61,19 +69,38 @@ int main() {
 
 
 	// Demonstrate using comparison functors in sets:
-	set<int> s1;
+	// set<int> s1;
 	// set<int,SederYored> s1;
 	// set<int,decltype(seder_yored)> s1 (seder_yored);
 
 	// set<int, less<int> > s1;  // default
 	// set<int, greater<> > s1;
 	// set<int,ZugiIzugi> s1 {1,2,4,6};
-	// bool user_chose_seder_yored = false;
-	// set<int, UserDefinedOrder> s1 (user_chose_seder_yored);
 
+
+	set<int, UserDefinedOrder> s1;
+
+	yored = false;
+	s1.emplace(5);
+	s1.emplace(7);
+	s1.emplace(3);
 	s1.emplace(5);
 	s1.emplace(7);
 	s1.emplace(3);
 	for (auto s: s1)
 		cout << s << endl;
+	cout << endl;
+
+	yored = true;
+	s1.clear();
+	s1.emplace(2);
+	s1.emplace(4);
+	s1.emplace(6);
+	s1.emplace();
+	for (auto s: s1)
+		cout << s << endl;
+
+
+	// set<dummy> sd;
+	// sd.insert(dummy{});
 }
