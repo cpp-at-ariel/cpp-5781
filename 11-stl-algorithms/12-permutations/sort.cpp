@@ -31,9 +31,10 @@ int main() {
 	sort(begin(v), end(v), greater<int>{});
 	cout << "\nsorted with comparator: " << v << endl;
 
+	// Partial sort, in linear time:
 	nth_element(begin(v), begin(v)+3, end(v));
 	cout << "\nvector after nth_element (3): " << v << endl;  // v[3] is in its correct place;
-	                                             // v[0..3] are the smallest 6 elements.
+	                                             // v[0..3] are the smallest 4 elements.
 	cout << "4th-smallest element: " << v[3] << endl;
 
 	partial_sort(begin(v), begin(v)+5, end(v));

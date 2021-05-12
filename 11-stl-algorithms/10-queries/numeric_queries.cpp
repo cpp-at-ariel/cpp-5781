@@ -40,7 +40,6 @@ int main() {
 	cout << "accumulate (sum strings): " << 
 		accumulate(begin(vs),end(vs),string("")) << endl;
 
-
 	// vector<Person> vp(3);
 	// accumulate(begin(vp),end(vp),Person{});
 

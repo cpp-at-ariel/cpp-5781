@@ -94,9 +94,7 @@ int main() {
 	cout << "equal_range(2): " << first2-begin(v) << "," << last2-begin(v) << endl;
 	auto [first3,last3] = equal_range(begin(v), end(v), 3);
 	cout << "equal_range(3): " << first3-begin(v) << "," << last3-begin(v) << endl;
-
-	list<int> l;
-	copy(begin(v), end(v), back_inserter(l));
-	cout << binary_search(begin(l), end(l), 8); 
+	auto [first4,last4] = equal_range(begin(v), end(v), 4);
+	cout << "equal_range(4): " << first4-begin(v) << "," << last4-begin(v) << endl;
 }
 
