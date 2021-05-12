@@ -35,5 +35,6 @@ int main() {
 		cout << v << endl;
 		v.insert(it,55);
 		cout << v << endl;
+		cout << "end" << endl;
 	}
 }

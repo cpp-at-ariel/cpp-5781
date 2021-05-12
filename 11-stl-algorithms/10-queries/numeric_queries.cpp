@@ -32,9 +32,9 @@ int main() {
 
 	cout << "accumulate (sum): " << accumulate(begin(v),end(v),0) << endl;
 	cout << "accumulate (product): " << accumulate(begin(v),end(v),
-		1, [](int a, int b){return a*b;}) << endl;
-	cout << "accumulate (product): " << accumulate(begin(v),end(v),
 		1, product) << endl;
+	cout << "accumulate (product): " << accumulate(begin(v),end(v),
+		1, [](int a, int b){return a*b;}) << endl;
 
 	vector<string> vs {"abc","def","ghi"};
 	cout << "accumulate (sum strings): " << 

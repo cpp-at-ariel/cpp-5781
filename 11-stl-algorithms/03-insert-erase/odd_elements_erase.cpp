@@ -26,10 +26,11 @@ template<typename Container, typename Iterator>
 void erase_odd_elements_2(Container& c, Iterator b, Iterator e) {
 	for (; b!=e;) {
 		bool is_odd = (*b)%2 != 0;
-		if (is_odd)
+		if (is_odd) {
 			b = c.erase(b);
-		else
+		} else {
 			++b;
+		}
 	}
 }
 

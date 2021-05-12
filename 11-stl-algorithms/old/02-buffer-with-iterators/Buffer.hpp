@@ -65,7 +65,7 @@ public:
 	~Buffer() {
 		freeMemory();
 	}
-	
+
 	Buffer& operator=(const Buffer& other) {
 		if (this!=&other) {
 			freeMemory(); // why not, call destructor or delete this?
@@ -86,7 +86,7 @@ public:
 		assert(i<size());
 		return _buf[i];
 	}
-	
+
 	const T& operator[](size_t i) const {
 		assert(i<size());
 		return _buf[i];
