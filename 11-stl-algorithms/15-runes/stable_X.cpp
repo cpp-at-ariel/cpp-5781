@@ -1,6 +1,5 @@
 /**
- * Demonstrates STL partition vs. stable_partition.
- * NOTE: with clang++ (5 and 9), there is no apparent difference.
+ * Demonstrates STL partition vs. stable_partition, and sort vs. stable_sort.
  * 
  * @author Erel Segal-Halevi
  * @since 2019-05
@@ -51,5 +50,7 @@ int main() {
 
 	stable_sort(begin(v2), end(v2), [](Person p1, Person p2) {return p1.age<p2.age;}); // sort by increasing age
 	cout << "stable_sort by age: " << v2 << endl;
+
+	// NOTE: with clang++ (5 and 9), there is no apparent difference between sort and stable_sort.
 }
 

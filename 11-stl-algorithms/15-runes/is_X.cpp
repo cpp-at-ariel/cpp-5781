@@ -52,13 +52,15 @@ int main() {
 	cout << "Not a heap:" << endl;
 	vector<int> v1{1,2,3,4,5,6,7,8,9};
 	cout << "is_heap: " << is_heap(begin(v1), end(v1)) << endl;
-	iter = is_heap_until(begin(v), end(v));
-	cout << "Number of heap-like elements: " << (iter-begin(v)) << endl << endl;
+	auto iter1 = is_heap_until(begin(v1), end(v1));
+	cout << "Number of heap-like elements: " << (iter1-begin(v1)) << endl << endl;
 	cout << v1 << endl;
 
 	cout << "make_heap: " << endl;
 	make_heap(begin(v1), end(v1));
 	cout << "is_heap: " << is_heap(begin(v1), end(v1)) << endl;
+	iter1 = is_heap_until(begin(v1), end(v1));
+	cout << "Number of heap-like elements: " << (iter1-begin(v1)) << endl << endl;
 	cout << v1 << endl;
 }	
 	
