@@ -5,6 +5,8 @@
  * Since:  2020-06
  */
 
+bool DEBUG=false;
+
 template<typename T> class SharedPointer{
 
 	struct ReferenceTracker {
@@ -19,21 +21,21 @@ public:
 
 	SharedPointer(T* new_ptr): 
 		tracker ( new ReferenceTracker {new_ptr, 1} )   { 
-		std::cout << "In constructor: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
+		if (DEBUG) std::cout << "In constructor: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
 	}
 
 	// Copy constructor:
 	SharedPointer(const SharedPointer<T>& other){
 		tracker = other.tracker;
 		tracker->counter++ ;
-		// std::cout << "In copy constructor: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
+		if (DEBUG) std::cout << "In copy constructor: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
 	}
 
 	// Delete when no remaining references:
 	~SharedPointer(){
 		if (!tracker) return;
 		tracker->counter--;
-		// std::cout << "In destructor: tracker->counter = " << tracker->counter << std::endl;
+		if (DEBUG) std::cout << "In destructor: tracker->counter = " << tracker->counter << std::endl;
 		if (tracker->counter == 0) {
 			delete tracker->ptr;
 			delete tracker;
@@ -42,15 +44,21 @@ public:
 
 	// Assignment operator:
 	SharedPointer& operator=(SharedPointer<T> const& other) {
+		if (DEBUG)  {
+			std::cout << "Start operator=: tracker = " << tracker;
+			if (tracker) std::cout << " tracker->counter = " << tracker->counter;
+			std::cout << std::endl;
+		}
 		if (tracker) {
-			// std::cout << "Start operator=: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
 			tracker->counter--;
-			if (tracker->counter == 0)
+			if (tracker->counter == 0) {
 				delete tracker->ptr;
+				// delete tracker;
+			}
 		}
 		tracker = other.tracker;
 		tracker->counter++ ;
-		// std::cout << "End operator=: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
+		if (DEBUG) std::cout << "End operator=: tracker = " << tracker << " tracker->counter = " << tracker->counter << std::endl;
 		return *this;
 	}
 

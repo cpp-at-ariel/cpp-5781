@@ -69,6 +69,11 @@ void playMusic3 (int numMusicians) {
 }
 
 
+// AutoPointer<Musician> musician_with_a_random_name(int i) {
+// 	AutoPointer<Musician> new_musician = new Musician("m_"+to_string(i)+"_"+to_string(rand()));
+// 	return new_musician; // Does not compile
+// }
+
 UniquePointer<Musician> musician_with_a_random_name(int i) {
 	UniquePointer<Musician> new_musician = new Musician("m_"+to_string(i)+"_"+to_string(rand()));
 	return new_musician;
@@ -81,14 +86,13 @@ UniquePointer<Musician> champion1;
 void playMusic4 (int numMusicians) {
 	vector<UniquePointer<Musician>> band (numMusicians);
 
-	for (int i = 0; i < numMusicians; ++i)
+	for (int i = 0; i < numMusicians; ++i) {
 		band[i] = musician_with_a_random_name(i);
+	}
 
-	delete &(*band[0]);
-
-	UniquePointer<Musician> other2 = move(band[2]);
-	UniquePointer<Musician> other3; other3 = move(band[3]);
-	champion1 = move(band[4]);
+	// UniquePointer<Musician> other2 = move(band[2]);
+	// UniquePointer<Musician> other3; other3 = move(band[3]);
+	// champion1 = move(band[4]);
 
 	for (int i = 0; i < numMusicians; ++i)
 		band[i]->play();
@@ -110,12 +114,19 @@ SharedPointer<Musician> champion2;
 void playMusic5 (int numMusicians) {
 	vector<SharedPointer<Musician>> band (numMusicians);
 
-	for (int i = 0; i < numMusicians; ++i)
-		band[i] = new Musician(to_string(i)); //shared_musician_with_a_random_name(i);
+	for (int i = 0; i < numMusicians; ++i) {
+		band[i] = new Musician(to_string(i)); 
+		// band[i] = shared_musician_with_a_random_name(i);
+		cout << endl;
+	}
+
+	cout << " --- " << endl;
 
 	SharedPointer<Musician> other2 = band[2];
 	SharedPointer<Musician> other3; other3 = band[3];
 	champion2 = band[4];
+
+	cout << " --- " << endl;
 
 	for (int i = 0; i < numMusicians; ++i)
 		band[i]->play();
@@ -127,7 +138,7 @@ void playMusic5 (int numMusicians) {
 int main () {
 	int numMusicans = 7;
 	try	{
-		playMusic1(numMusicans);
+		playMusic5(numMusicans);
 	} catch (TooNoisy& noisy) {
 		cout << endl << endl << "It is too noisy here! " << noisy.getNumMusicians() << " musicians are playing concurrently! Stop Playing!" << endl << endl;
 	}

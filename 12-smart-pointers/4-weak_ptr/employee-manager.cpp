@@ -1,3 +1,10 @@
+/**
+ * Demonstrates the need for weak_ptr.
+ * 
+ * Author: Eran Kaufmann.
+ * Since: 2020.
+ */
+
 #include <string>
 #include <iostream>
 #include <vector>
@@ -14,7 +21,7 @@ struct Manager{
 	~Manager() {
 //		for(auto& emp:employees)
 //			emp->manager=nullptr;
-		{cout << "manager I'm done \n";};
+		{cout << "Manager I'm done \n";};
 	}
 };
 
@@ -35,10 +42,6 @@ struct Employee{
 	~Employee(){cout << "Employee I'm done \n";};
 
 };
-
-void add(){
-
-}
 
 
 

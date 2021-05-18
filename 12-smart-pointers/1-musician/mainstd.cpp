@@ -72,7 +72,7 @@ void playMusic5 (int numMusicians) {
 int main () {
 	int numMusicans = 7;
 	try	{
-		playMusic5(numMusicans);
+		playMusic4(numMusicans);
 	} catch (TooNoisy& noisy) {
 		cout << endl << endl << "It is too noisy here! " << noisy.getNumMusicians() << " musicians are playing concurrently! Stop Playing!" << endl << endl;
 	}

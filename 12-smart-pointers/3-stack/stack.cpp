@@ -38,11 +38,6 @@ struct Stack{
 	}
 
 	struct iterator{
-		using iterator_category = std::forward_iterator_tag;
-		using value_type = int;
-		using difference_type = int;
-		using pointer = int*;
-		using reference = int&;
 		shared_ptr<Node> curr;
 		iterator(shared_ptr<Node> a):curr(a){};
 		void operator++(){

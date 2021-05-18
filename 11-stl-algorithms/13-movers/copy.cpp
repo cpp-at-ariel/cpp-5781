@@ -26,11 +26,21 @@ int main() {
 	//v2.insert(begin(v2), begin(v), end(v));
 	//cout << "v2: " << v2 << endl << endl;
 
-	copy(begin(v)+4, end(v), begin(v)+1);
-	cout << "v after copy [4,end) to begin+1: " << v << endl;
-	copy(begin(v2), end(v2), begin(v));
-	cout << "v after copy from v2: " << v << endl;
-	copy_backward(begin(v)+1, begin(v)+5, begin(v)+7);
-	cout << "v after copy_backward [begin+1,begin+5) to begin+7: " << v << endl;
+	// COPY A RANGE TO ITSELF:
+	// (a) if d_first is within the range [first, last), std::copy is undefined; use std::copy_backward instead.
+	v = v2;
+	copy(begin(v), begin(v)+5, begin(v)+2);
+	cout << "v after copy [0,5) to begin+2: " << v << endl;
+	v = v2;
+	copy_backward(begin(v), begin(v)+5, begin(v)+7);
+	cout << "v after copy_backward [0,5) to begin+7: " << v << endl;
+
+	// (b) If d_last is within (first, last], std::copy_backward is not defined; use std::copy instead.
+	v = v2;
+	copy_backward(begin(v)+2, begin(v)+7, begin(v)+5);
+	cout << "v after copy [begin+2,begin+7) to begin+5: " << v << endl;
+	v = v2;
+	copy(begin(v)+2, begin(v)+7, begin(v));
+	cout << "v after copy_backward [begin+2,begin+7) to begin: " << v << endl;
 }
 
