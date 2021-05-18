@@ -46,6 +46,8 @@ int main() {
 	
 	reverse(begin(v), end(v));
 	cout << "reverse (v): " << v << endl;
+	reverse(begin(v)+2, begin(v)+6);
+	cout << "reverse (v[2..6]): " << v << endl;
 
 	array<int,10> a{11,13,15,17,19, 12,14,16,18,20};
 	cout << "\nTwo sorted halves: " << a << endl;

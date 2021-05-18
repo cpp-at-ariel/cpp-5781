@@ -25,7 +25,7 @@ int main() {
 	cout << "lexicographical_compare(v1,v2): " << lexicographical_compare(begin(v1),end(v1),begin(v2),end(v2)) << endl; // is v1 < v2?
 	cout << "lexicographical_compare(v2,v1): " << lexicographical_compare(begin(v2),end(v2),begin(v1),end(v1)) << endl; // is v2 < v1?
 
-	auto [iter1,iter2] = mismatch(begin(v1),end(v1),begin(v2),end(v2));
+	auto [iter1,iter2] = mismatch(begin(v1)+4,end(v1),++++++++begin(v2),end(v2));
 	cout << "mismatch-1: " << *iter1 << endl;
 	cout << "mismatch-2: " << *iter2 << endl;
 }

@@ -10,6 +10,10 @@
 #include <functional>
 using namespace std;
 
+int return1() {
+	return 1;
+}
+
 int powers_of_two() {
 	static int n=1;
 	n *= 2;
@@ -66,7 +70,7 @@ int main() {
 
 	// Demonstrates the bind function:
 	auto powers_of_three = bind(powers_of_k, 3);
-	// cout << powers_of_three();
+	cout << "powers_of_three(): " << powers_of_three() << endl;
 	// generate(v1.begin(), v1.end(), powers_of_k); // compile error
 	generate(v1.begin(), v1.end(), powers_of_three);
 	//generate(v1.begin(), v1.end(), bind(powers_of_k, 3));

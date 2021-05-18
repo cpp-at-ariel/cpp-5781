@@ -23,15 +23,17 @@ int main() {
 	istream_iterator<float> ibegin {str};
 	istream_iterator<float> iend {};
 	cout << "istream_iterator: ";
-	for (; ibegin!=iend; ++ibegin)
-		cout << (*ibegin) << endl;
+	for (auto i=ibegin; i!=iend; ++i)
+		cout << (*i) << endl;
 	cout << endl;
+
+	// cout << *(find(istream_iterator<int>(str), istream_iterator<int>{} , 0.3));
 
 	// example of istream_iterator + copy:
     istringstream str2("8 5 7 1");
 	vector<int> v1(4);
 	// copy(istream_iterator<int>(cin), istream_iterator<int>{} , v1.begin());
-	copy(istream_iterator<int>(str2), istream_iterator<int>{} , v1.begin());
+	copy(istream_iterator<int>(str2), istream_iterator<int>{}, v1.begin());
 	for (auto i: v1)
 		cout << i << endl;
 }

@@ -24,7 +24,8 @@ struct is_less_than_8 {
 
 int main() {
 	cout << boolalpha;
-	vector<int> v{4,6,8,5,4,1,3,1,4,7};       // OK
+	int v[10] {4,6,8,5,4,1,3,1,4,7};
+	vector<int> v1{4,6,8,5,4,1,3,1,4,7};       // OK
 	cout << "all_of(v, <10): " << all_of(begin(v), end(v), [](int x){return x<10;}) << endl;
 	cout << "all_of(v, <8): " << all_of(begin(v), end(v), [](int x){return x<8;}) << endl;
 	cout << "all_of(v, <1): " << all_of(begin(v), end(v), [](int x){return x<1;}) << endl;

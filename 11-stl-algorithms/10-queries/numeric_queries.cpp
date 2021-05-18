@@ -20,7 +20,8 @@ struct Person{};
 int product(int a, int b) { return a*b; }
 
 int main() {
-	vector<int> v{4,6,8,5,4,1,3,1,4,7};    
+	vector<int> v{4,6,8,5,4,1,3,1,4,7};   
+	int a[10] {4,6,8,5,4,1,3,1,4,7};
 	cout << "v = " << v << endl;
 	cout << "count(4): " << count(v.begin(),v.end(),4) << endl;
 	cout << "count(1): " << count(begin(v),end(v),1) << endl;

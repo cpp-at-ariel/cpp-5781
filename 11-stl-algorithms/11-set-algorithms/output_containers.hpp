@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <set>
+#include <unordered_set>
 #include <vector>
 #include <list>
 #include <deque>
@@ -23,6 +24,11 @@ ostream& operator<< (ostream& out, const vector<T>& c) {
 
 template<typename T, unsigned long N>
 ostream& operator<< (ostream& out, const array<T,N>& c) {
+	return out << tostring(begin(c), end(c));
+}
+
+template<typename T>
+ostream& operator<< (ostream& out, const unordered_set<T>& c) {
 	return out << tostring(begin(c), end(c));
 }
 

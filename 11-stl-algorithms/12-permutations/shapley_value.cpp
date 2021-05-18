@@ -12,7 +12,7 @@
 
 using namespace std;
 
-map<int, double> shapley_values(int num_of_players, map<set<int>, double> map_subset_to_cost)
+map<int, double> shapley_values(int num_of_players, const map<set<int>, double>& map_subset_to_cost)
 {
 	vector<int> players(num_of_players);
 	iota(players.begin(), players.end(), 1); // fill the vector with 1,...,n

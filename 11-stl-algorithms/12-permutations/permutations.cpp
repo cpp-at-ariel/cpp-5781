@@ -10,6 +10,8 @@ using namespace std;
 
 int main() {
 	string v {"abdc"};
+	next_permutation(v.begin(),v.end());
+	cout << v << endl;
 	sort(begin(v), end(v));
 	cout << "Permutations in increasing order:" << endl;
 	do {
