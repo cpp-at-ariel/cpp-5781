@@ -9,11 +9,12 @@
 #include <iostream>
 using namespace std;
 
+map<string, int> m {
+	{"abc", 2},
+	{"xyz", 8},
+};
+
 int main() {
-	map<string, int> m {
-		{"abc", 2},
-		{"xyz", 8},
-	};
 	m["def"] = 4;
 	m["ghi"] = 6;
 
