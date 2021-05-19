@@ -22,11 +22,6 @@ int main() {
 	auto v2 = v;
 	cout << "v: " << v << endl;
 	auto new_end = unique(begin(v), end(v));
-	unordered_set<int> vs;
-	vector<int> vsv;
-	copy(begin(v), end(v), inserter(vs, vs.end()));
-	copy(begin(vs), end(vs), back_inserter(vsv));
-	cout << "v after unordered_set: " << vsv << endl;
 
 	cout << "v after unique: " << v << endl;
 	v.erase(new_end, end(v));
@@ -36,5 +31,12 @@ int main() {
 	unique_copy(begin(v2), end(v2), back_inserter(v3));
 	cout << "v2 after unique_copy: " << v2 << endl;
 	cout << "v3 after unique_copy: " << v3 << endl;
+
+	cout << "\n Unique using unordered_set: " << endl;
+	unordered_set<int> vs;
+	vector<int> vsv;
+	copy(begin(v), end(v), inserter(vs, vs.end()));
+	copy(begin(vs), end(vs), back_inserter(vsv));
+	cout << "v after unordered_set: " << vsv << endl;
 }
 

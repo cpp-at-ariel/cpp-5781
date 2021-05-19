@@ -22,7 +22,7 @@ int main()
     transform(
         s.begin(), s.end(), 
         back_inserter(ordinals),
-        [](unsigned char c)  { return c; });
+        [](unsigned char c)  { return (int)c; });
  
     cout << s << ':';
     for (auto ord : ordinals) 

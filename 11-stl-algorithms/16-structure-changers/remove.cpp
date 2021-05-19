@@ -25,6 +25,8 @@ int main() {
 	v.erase(new_end, end(v));
 	cout << "v after erase: " << v << endl<<endl;
 
+	// v.erase(remove(begin(v), end(v), 11), end(v));
+
 	vector<int> v3;
 	remove_copy(begin(v2), end(v2), back_inserter(v3), 11);
 	cout << "v2 after remove_copy: " << v2 << endl;
