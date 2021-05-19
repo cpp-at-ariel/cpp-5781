@@ -32,11 +32,21 @@ bool isBalanced(string word){
 		if (c == '{' || c == '[' )
 			st.push(c);
 
-		if (c == '}' && !st.empty() && st.top() == '{')
-			st.pop();
+		if (c == '}') {
+			if (!st.empty() && st.top() == '{')  {
+				st.pop();
+			} else {
+				return false;
+			}
+		}
 
-		if (c == ']' && !st.empty() && st.top() == '[')
-			st.pop();
+		if (c == ']') {
+			if (!st.empty() && st.top() == '[') {
+				st.pop();
+			} else {
+				return false;
+			}
+		}
 	}
 
 	if(!st.empty())
@@ -59,22 +69,22 @@ bool FindInSet( vector<int>& data, int target_sum){
 	return false;
 }
 
-
+// ???
 int  countZeros(vector<int> & v){
 	int count=0;
-	unordered_multiset<int> set;
+	unordered_multiset<int> my_multiset;
 	int sum=0;
 
 	for (int num:v){
 		sum += num;
-		count += set.count(sum);
-		set.insert(sum);
+		count += my_multiset.count(sum);
+		my_multiset.insert(sum);
 	}
 
 	return count;
 }
 
-// Print the frequency of each word in the input file
+// Print the 10 words in the input file with highest frequency.
 void printwords(){
 	std::ifstream input("input.txt");
 	std::vector<std::string> words;

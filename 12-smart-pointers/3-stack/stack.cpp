@@ -63,8 +63,6 @@ struct Stack{
 
 
 int main(){
-
-	//unordered_set<Employee> use;
     Stack s;
     s.push(1);
     s.push(2);

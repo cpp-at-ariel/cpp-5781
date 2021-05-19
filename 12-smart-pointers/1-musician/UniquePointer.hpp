@@ -37,6 +37,8 @@ public:
 	// Do not allow to duplicate:
 	UniquePointer(UniquePointer const& other) = delete;
 	UniquePointer& operator=(UniquePointer const& other) = delete;
+	UniquePointer(UniquePointer& other) = delete;
+	UniquePointer& operator=(UniquePointer& other) = delete;
 
 	// Move constructor and operator=:
 	UniquePointer(UniquePointer&& other){

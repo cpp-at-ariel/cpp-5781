@@ -30,9 +30,10 @@ struct Employee{
 	int id;
 	string name;
 	weak_ptr<Manager> manager;
+	// shared_ptr<Manager> manager;
 
 	void take_vacation(){
-		//if(auto p = manager.lock())
+		if(auto p = manager.lock())
 		if(!manager.expired()){
 			auto p = manager.lock();
 			p -> ask_for_vacation();

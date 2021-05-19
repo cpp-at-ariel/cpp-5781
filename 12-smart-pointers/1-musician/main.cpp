@@ -90,9 +90,11 @@ void playMusic4 (int numMusicians) {
 		band[i] = musician_with_a_random_name(i);
 	}
 
-	// UniquePointer<Musician> other2 = move(band[2]);
-	// UniquePointer<Musician> other3; other3 = move(band[3]);
-	// champion1 = move(band[4]);
+	// band[0] = band[1];
+
+	UniquePointer<Musician> other2 = move(band[2]);
+	UniquePointer<Musician> other3; other3 = move(band[3]);
+	champion1 = move(band[4]);
 
 	for (int i = 0; i < numMusicians; ++i)
 		band[i]->play();
@@ -115,7 +117,7 @@ void playMusic5 (int numMusicians) {
 	vector<SharedPointer<Musician>> band (numMusicians);
 
 	for (int i = 0; i < numMusicians; ++i) {
-		band[i] = new Musician(to_string(i)); 
+		band[i] = new Musician(to_string(i));
 		// band[i] = shared_musician_with_a_random_name(i);
 		cout << endl;
 	}
@@ -139,7 +141,7 @@ int main () {
 	int numMusicans = 7;
 	try	{
 		playMusic5(numMusicans);
-	} catch (TooNoisy& noisy) {
+	} catch (TooNoisy noisy) {
 		cout << endl << endl << "It is too noisy here! " << noisy.getNumMusicians() << " musicians are playing concurrently! Stop Playing!" << endl << endl;
 	}
 }
