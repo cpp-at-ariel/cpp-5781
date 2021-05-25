@@ -10,15 +10,28 @@
 #include <algorithm>
 #include <vector>
 #include <array>
-#include <functional>
 
 #include "output_containers.hpp"
 using namespace std;
+
+#include <functional>
 using namespace std::placeholders;
+
 
 bool is_divisible_by(int x, int y) {
 	return x%y==0;
 }
+
+/*
+bind(is_divisible_by,_1,2))
+
+==
+
+bool bind_is_divisible_by_2(int x) {
+	return x%2==0;
+}
+*/
+
 
 int main() {
 	vector<int> v{9,8,6,7,4,5,2,0,3,1};
@@ -27,7 +40,7 @@ int main() {
 
 	partition_copy(begin(v), end(v), 
 		back_inserter(even), back_inserter(odd), 
-		bind(is_divisible_by,_1,2));  
+		bind(is_divisible_by,_1,2));
 		// Equivalent to:
 		// [](int x){return x%2==0;});
 	cout << "partition_copy to even vs. odd: " << even << "   " << odd << endl;

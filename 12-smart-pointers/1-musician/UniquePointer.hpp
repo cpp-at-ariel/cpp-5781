@@ -46,7 +46,7 @@ public:
 		other.ptr = nullptr;
 	}
 	void operator=(UniquePointer&& other){
-		if (ptr) delete ptr; 
+		if (ptr) delete ptr;
 		ptr  = other.ptr;
 		other.ptr = nullptr;
 	}

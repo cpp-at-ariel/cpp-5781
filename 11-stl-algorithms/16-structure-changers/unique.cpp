@@ -32,7 +32,7 @@ int main() {
 	cout << "v2 after unique_copy: " << v2 << endl;
 	cout << "v3 after unique_copy: " << v3 << endl;
 
-	cout << "\n Unique using unordered_set: " << endl;
+	cout << "\n unique_copy using unordered_set: " << endl;
 	unordered_set<int> vs;
 	vector<int> vsv;
 	copy(begin(v), end(v), inserter(vs, vs.end()));

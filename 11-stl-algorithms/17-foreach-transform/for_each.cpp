@@ -10,8 +10,7 @@
 using namespace std;
 
 
-int main()
-{
+int main() {
     vector<int> nums{3, 4, 2, 8, 15, 267};
  
     auto print = [](int n) { cout << " " << n; };

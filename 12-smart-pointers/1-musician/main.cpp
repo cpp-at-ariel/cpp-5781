@@ -69,7 +69,7 @@ void playMusic3 (int numMusicians) {
 }
 
 
-// AutoPointer<Musician> musician_with_a_random_name(int i) {
+// AutoPointer<Musician> auto_musician_with_a_random_name(int i) {
 // 	AutoPointer<Musician> new_musician = new Musician("m_"+to_string(i)+"_"+to_string(rand()));
 // 	return new_musician; // Does not compile
 // }
@@ -92,8 +92,8 @@ void playMusic4 (int numMusicians) {
 
 	// band[0] = band[1];
 
-	UniquePointer<Musician> other2 = move(band[2]);
-	UniquePointer<Musician> other3; other3 = move(band[3]);
+	// UniquePointer<Musician> other2 = move(band[2]);
+	// UniquePointer<Musician> other3; other3 = move(band[3]);
 	champion1 = move(band[4]);
 
 	for (int i = 0; i < numMusicians; ++i)

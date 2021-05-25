@@ -17,6 +17,7 @@ struct Employee;
 
 struct Manager{
 	vector<shared_ptr<Employee>> employees;
+	// vector<weak_ptr<Employee>> employees;
 	void ask_for_vacation() {}
 	~Manager() {
 //		for(auto& emp:employees)
