@@ -12,11 +12,11 @@ using namespace std;
 template<typename T>
 class MyTree {
 
-    struct CompareAddresses {
-       bool operator() (const T& lhs, const T& rhs) const {
-           return (&lhs) < (&rhs);
-       }
-    };
+	struct CompareAddresses {
+	   bool operator() (const T& lhs, const T& rhs) const {
+		   return (&lhs) < (&rhs);
+	   }
+	};
 
 	set<T, CompareAddresses> my_set;
 public:
