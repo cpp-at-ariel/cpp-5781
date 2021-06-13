@@ -141,7 +141,7 @@ class vector<bool> {
     void set(int i, bool b) { 
       check_index(i);
       uint8_t mask = (0b00000001 << (i%8));
-      // EXAMPLE: i =1 0, i%8 == 2,
+      // EXAMPLE: i = 10, i%8 == 2,
       // 1 << 2  == 0b00000100 = 4
       if (b) {
         data[i/8] = data[i/8] | mask;
