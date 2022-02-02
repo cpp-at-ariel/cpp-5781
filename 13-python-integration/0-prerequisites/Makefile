@@ -1,5 +1,4 @@
 # A generic makefile for running single-file C++ projects.
-#
 # AUTHOR: Erel Segal-Halevi
 
 CXX=clang++-9
@@ -15,7 +14,7 @@ MAINEXECUTABLE=$(subst .cpp,,$(MAIN)).exe
 SOURCES=$(MAIN)
 
 all: $(MAINEXECUTABLE)
-	$(MAINEXECUTABLE)
+	./$(MAINEXECUTABLE)
 
 $(MAINEXECUTABLE): $(SOURCES) $(HEADERS)
 	$(CXX) $(CXXFLAGS) $(SOURCES) -o $(MAINEXECUTABLE)
